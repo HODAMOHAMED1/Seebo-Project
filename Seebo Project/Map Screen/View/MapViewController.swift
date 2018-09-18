@@ -104,6 +104,7 @@ class MapViewController: UIViewController, MapViewPro {
         tableview.delegate = self
         tableview.dataSource = self
         tableview.layer.cornerRadius = 20
+        tableview.register(DiscoverCell.self, forCellReuseIdentifier: "DiscoverCell")
     }
 }
 
@@ -144,7 +145,7 @@ extension MapViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableview.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! TableViewCell
+        let cell = tableview.dequeueReusableCell(withIdentifier: "DiscoverCell", for: indexPath) as! TableViewCell
         cell.configure(advertis: presenter.getAdvertisments()[indexPath.row])
         return cell
     }

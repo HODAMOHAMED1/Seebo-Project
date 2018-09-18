@@ -20,6 +20,8 @@
 		8428E402214E4E8800051E39 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8428E401214E4E8800051E39 /* MapViewController.swift */; };
 		842F9F07214FA206008E0C76 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 840ADFFB214E8B35004491B6 /* CoreLocation.framework */; };
 		842F9F0B214FAE00008E0C76 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842F9F0A214FAE00008E0C76 /* TableViewCell.swift */; };
+		8431114A21514C88005BF612 /* DiscoverCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8431114921514C88005BF612 /* DiscoverCell.xib */; };
+		8431114C21514D2E005BF612 /* DiscoverCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8431114B21514D2E005BF612 /* DiscoverCell.swift */; };
 		84324AB82148735F00B172BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84324AB72148735F00B172BE /* AppDelegate.swift */; };
 		84324ABA2148735F00B172BE /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84324AB92148735F00B172BE /* HomeScreenViewController.swift */; };
 		84324ABD2148735F00B172BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84324ABB2148735F00B172BE /* Main.storyboard */; };
@@ -76,6 +78,8 @@
 		8428E3FF214E4E2300051E39 /* MapPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPresenterProtocol.swift; sourceTree = "<group>"; };
 		8428E401214E4E8800051E39 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		842F9F0A214FAE00008E0C76 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		8431114921514C88005BF612 /* DiscoverCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DiscoverCell.xib; sourceTree = "<group>"; };
+		8431114B21514D2E005BF612 /* DiscoverCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverCell.swift; sourceTree = "<group>"; };
 		84324AB42148735E00B172BE /* Seebo Project .app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Seebo Project .app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84324AB72148735F00B172BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84324AB92148735F00B172BE /* HomeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewController.swift; sourceTree = "<group>"; };
@@ -177,6 +181,7 @@
 			children = (
 				8428E401214E4E8800051E39 /* MapViewController.swift */,
 				842F9F0A214FAE00008E0C76 /* TableViewCell.swift */,
+				8431114B21514D2E005BF612 /* DiscoverCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -223,6 +228,7 @@
 				84324AC32148737F00B172BE /* LaunchScreen.storyboard */,
 				84324AC62148737F00B172BE /* Info.plist */,
 				84324ABE2148735F00B172BE /* HomeScreen_TaskPerfect.xcdatamodeld */,
+				8431114921514C88005BF612 /* DiscoverCell.xib */,
 			);
 			path = "Seebo Project";
 			sourceTree = "<group>";
@@ -433,6 +439,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8431114A21514C88005BF612 /* DiscoverCell.xib in Resources */,
 				84324AC52148737F00B172BE /* LaunchScreen.storyboard in Resources */,
 				84324AC22148737F00B172BE /* Assets.xcassets in Resources */,
 				84324ABD2148735F00B172BE /* Main.storyboard in Resources */,
@@ -527,6 +534,7 @@
 				8428E3F6214E4D4700051E39 /* MapManager.swift in Sources */,
 				8428E3FE214E4DFE00051E39 /* MapViewProtocol.swift in Sources */,
 				84324AC02148735F00B172BE /* HomeScreen_TaskPerfect.xcdatamodeld in Sources */,
+				8431114C21514D2E005BF612 /* DiscoverCell.swift in Sources */,
 				8449B8822149260F00D66A8C /* PresenterProtocol.swift in Sources */,
 				8428E3F8214E4D9000051E39 /* ApiDataAccess.swift in Sources */,
 				8449B880214925F500D66A8C /* ViewProtocol.swift in Sources */,
