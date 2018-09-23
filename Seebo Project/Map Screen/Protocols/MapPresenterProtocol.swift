@@ -16,4 +16,5 @@ protocol MapPresenterPro {
     func setLocation(location:CLLocation)
     func getNumberOfAdvertisments()-> Int
     func getAdvertisments()->[advertisment]
+    func getAdvertisment(index:Int)->advertisment
 }

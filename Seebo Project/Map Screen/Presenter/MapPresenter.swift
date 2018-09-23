@@ -47,4 +47,8 @@ class MapPresenter: NSObject,MapPresenterPro {
         
         return advertisments
     }
+    func getAdvertisment(index:Int)->advertisment {
+        
+        return advertisments[index]
+    }
 }

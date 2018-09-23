@@ -27,6 +27,7 @@ class advertisment:NSObject {
     var lat: String?
     var lng: String?
     var avgRate:Int?
+    var lastreview :Review?
     var absoluteRoute : String?
     var images:[String]?
     var mainImage: String?
@@ -37,6 +38,7 @@ class advertisment:NSObject {
     var model_title:String?
     var year:Int?
     var distance:Int?
+    var userobj:User?
     
     init(json: JSON) {
         
@@ -107,12 +109,22 @@ class advertisment:NSObject {
         if let rate = json["avgRate"].int{
             avgRate = rate
         }
-        if let images_arr = json["images"].array {
+        if let revieww = json["lastReview"].dictionary{
             
+            lastreview = Review (review: JSON(revieww))
+        }
+        if let user = json["user"].dictionary{
+            
+            userobj = User (user: JSON(user))
+        }
+        if let images_arr = json["images"].array {
+            images = [String]()
             if (images_arr.count > 0) {
-            for i in 0...images_arr.count
+            for i in 0...images_arr.count-1
             {
-                images?.append(images_arr[i].stringValue)
+                var imagestr:String = images_arr[i]["path"].string!
+                images?.append(imagestr)
+                print (imagestr)
             }
            }
           }

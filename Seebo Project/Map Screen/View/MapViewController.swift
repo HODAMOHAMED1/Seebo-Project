@@ -26,8 +26,11 @@ class MapViewController: UIViewController, MapViewPro {
         super.viewDidLoad()
         configureUpperView()
         configureTableView()
-        self.accessLocation()
         presenter = MapPresenter(view: self)
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        self.accessLocation()
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
     }
     
     func reloadData() {
@@ -104,7 +107,14 @@ class MapViewController: UIViewController, MapViewPro {
         tableview.delegate = self
         tableview.dataSource = self
         tableview.layer.cornerRadius = 20
-        tableview.register(DiscoverCell.self, forCellReuseIdentifier: "DiscoverCell")
+        tableview.register(UINib(nibName: "DiscoverCell", bundle: nil), forCellReuseIdentifier: "DiscoverCell")
+    }
+   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        var detailsview = segue.destination as! DetailsViewController
+    if let indexPath = self.tableview.indexPathForSelectedRow {
+        let selectedAdvert = presenter.getAdvertisment(index: indexPath.row)
+        detailsview.advertisment = selectedAdvert
+    }
     }
 }
 
@@ -145,7 +155,7 @@ extension MapViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableview.dequeueReusableCell(withIdentifier: "DiscoverCell", for: indexPath) as! TableViewCell
+        let cell = tableview.dequeueReusableCell(withIdentifier: "DiscoverCell", for: indexPath) as! DiscoverCell
         cell.configure(advertis: presenter.getAdvertisments()[indexPath.row])
         return cell
     }
@@ -155,7 +165,8 @@ extension MapViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-         print("selected")
+       print("selected")
+        performSegue(withIdentifier: "details", sender: self)
     }
 }
 

@@ -9,5 +9,5 @@ pod 'GoogleMaps'
 pod 'GooglePlaces'
 pod 'SwiftyJSON', '~> 4.0'
 pod 'SDWebImage', '~> 4.0'
-
+pod 'ImageSlideshow', '~> 1.5'
 end

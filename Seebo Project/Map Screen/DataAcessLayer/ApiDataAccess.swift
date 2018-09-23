@@ -12,8 +12,6 @@ import SwiftyJSON
 
 class ApiLocalDataAcess: NSObject {
     
-    var  advertisments = [advertisment]()
-    
     func getAdvertesments(url:String,longitude:String,latitude:String,onSuccess success:@escaping (_ json:JSON)->Void) {
         
         let param = [
