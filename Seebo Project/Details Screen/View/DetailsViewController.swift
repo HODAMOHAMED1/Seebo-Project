@@ -7,38 +7,81 @@
 //
 
 import UIKit
+import Foundation
 import ImageSlideshow
 import SDWebImage
+import Cosmos
 
 class DetailsViewController: UIViewController ,UIScrollViewDelegate,DetailsViewPro{
     
     @IBOutlet weak var scrollview: UIScrollView!
     @IBOutlet weak var cardDetails: CardViewDetails!
     @IBOutlet weak var tableViewHight: NSLayoutConstraint!
+    
     @IBOutlet weak var tableReviewHight: NSLayoutConstraint!
     @IBOutlet weak var tableview: UITableView!
     @IBOutlet weak var tableviewReview: UITableView!
     @IBOutlet weak var usercontact: UserContact!
     @IBOutlet weak var imageslides: ImageSlideshow!
     
+    @IBOutlet weak var rateview: CosmosView!
+    @IBOutlet weak var commentTextView: UITextView!
+    @IBOutlet weak var postButton: UIButton!
+    @IBOutlet weak var askSellerBtn: UIButton!
+    @IBOutlet weak var commentViewHight: NSLayoutConstraint!
+    @IBOutlet weak var commentView: UIView!
+    @IBOutlet weak var askSellerView: UIView!
+    @IBOutlet weak var askSellerHight: NSLayoutConstraint!
     var advertisment : advertisment!
     var presenter:DetailsPresenterPro!
     var inputs = [InputSource]()
     
     override func viewDidLoad() {
-        super.viewDidLoad()
+        super.viewDidLoad() 
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
         presenter = DetailsPresenter(view: self)
         configurImageSlides()
         configurTableView()
+        configureCommentView()
         cardDetails.configure(adverit: advertisment)
         usercontact.configure(user: advertisment.userobj!)
     }
     override func viewWillAppear(_ animated: Bool) {
         presenter.getAllReviewsById(id: advertisment.adv_id!)
-        self.navigationController?.setNavigationBarHidden(false, animated: animated)
-        UINavigationBar.appearance().shadowImage = UIImage()
-        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
-        self.navigationController?.navigationBar.isTranslucent = true
+    }
+    @IBAction func backAction(_ sender: UIButton) {
+    self.navigationController?.popViewController(animated: true)
+        print("selected")
+    }
+
+    @IBAction func askSeller(_ sender: UIButton) {
+        print("uuuu")
+        askSellerView.isHidden = true
+        commentView.isHidden = false
+        askSellerHight.priority = UILayoutPriority(rawValue: 998)
+        commentViewHight.priority = UILayoutPriority(rawValue: 999)
+        askSellerHight.constant = 0
+        commentViewHight.constant = 180
+        commentView.alpha = 1
+        UIView.animate(withDuration: 0.5, animations: {
+            self.view.layoutIfNeeded()
+        })
+    }
+    @IBAction func postCommentAction(_ sender: UIButton) {
+        let comment = Review()
+        comment.review_str = commentTextView.text
+        comment.rate = Int(rateview.rating)
+        rateview.rating = 0.0
+        print("ratee\(comment.rate!)")
+        askSellerView.isHidden = false
+        commentView.isHidden = true
+        commentViewHight.priority = UILayoutPriority(rawValue: 998)
+        askSellerHight.priority = UILayoutPriority(rawValue: 999)
+        askSellerHight.constant = 50
+        commentViewHight.constant = 0
+        UIView.animate(withDuration: 0.1, animations: {
+            self.view.layoutIfNeeded()
+        })
     }
     func configurImageSlides() {
         var images:[String] = advertisment.images!
@@ -59,6 +102,14 @@ class DetailsViewController: UIViewController ,UIScrollViewDelegate,DetailsViewP
         imageslides.pageControl.pageIndicatorTintColor = UIColor.white
         imageslides.pageControl.numberOfPages = images.count
         self.imageslides.reloadInputViews()
+    }
+    func configureCommentView() {
+        rateview.settings.updateOnTouch = true
+        rateview.settings.fillMode = .full
+        rateview.rating = 0.0
+        commentTextView.layer.borderColor = UIColor.gray.cgColor;
+        commentTextView.layer.borderWidth = 1.0;
+        commentTextView.layer.cornerRadius = 5.0;
     }
     func configurTableView() {
         tableview.register(UINib(nibName: "DetailsTableCell", bundle: nil), forCellReuseIdentifier: "DetailsCell")
@@ -86,7 +137,8 @@ extension DetailsViewController : UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         var count :Int?
         if tableView == tableview {
-            count = advertisment.subattributes?.count
+           // advertisment.subattributes?.count
+            count = 2
         }
         if tableView == tableviewReview {
             count = presenter.getNumberOfReviews()
@@ -150,5 +202,8 @@ extension DetailsViewController :UICollectionViewDelegate,UICollectionViewDataSo
         let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind,withReuseIdentifier: "CollectionHeader",for: indexPath) as! CollectionHeaderView
         headerView.text.text = "Related Items"
         return headerView
+    }
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
     }
 }

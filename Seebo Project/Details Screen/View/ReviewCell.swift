@@ -14,12 +14,14 @@ class ReviewCell: UITableViewCell {
     @IBOutlet weak var userimage: UIImageView!
     @IBOutlet weak var username: UILabel!
     @IBOutlet weak var time: UILabel!
+    @IBOutlet weak var rate: RateView!
     @IBOutlet weak var reviewstr: UITextView!
     
     func configure(review:Review) {
         username.text = review.user?.username
         reviewstr.text = review.review_str
         time.text = review.created
+        rate.configure(flag: 0, rate: review.rate!)
         let iconurl = URL(string: (review.user?.image)!)
         userimage.sd_setImage(with: iconurl,placeholderImage:#imageLiteral(resourceName: "dress"))
     }

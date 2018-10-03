@@ -24,25 +24,23 @@ class CardViewDetails: UIView {
     @IBInspectable var shadowOpacity: Float = 0.2
     
     override func layoutSubviews() {
-      //  layer.cornerRadius = cornerRadius
         let shadowPath = UIBezierPath(roundedRect: bounds, cornerRadius: cornerRadius)
-        layer.masksToBounds = false
-        layer.shadowColor = shadowColor?.cgColor
-        layer.shadowOffset = CGSize(width: shadowOffsetWidth, height: shadowOffsetHeight);
-        layer.shadowOpacity = shadowOpacity
-        layer.shadowPath = shadowPath.cgPath
+        view.layer.shadowOffset = CGSize(width: shadowOffsetWidth, height: shadowOffsetHeight);
+        view.layer.shadowOpacity = shadowOpacity
+        view.layer.shadowPath = shadowPath.cgPath
+        view.frame = bounds
+        view.layer.cornerRadius = cornerRadius
+        view.layer.masksToBounds = false
+        view.layer.shadowColor = shadowColor?.cgColor
     }
     override init(frame:CGRect){
         super.init(frame: frame)
         view = loadViewFromNib()
-        view.frame = bounds
-        view.layer.cornerRadius = cornerRadius
         addSubview(view)
     }
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         view = loadViewFromNib()
-        view.frame = bounds
         addSubview(view)
     }
     func loadViewFromNib()->UIView {

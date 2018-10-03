@@ -18,7 +18,9 @@ class Review: NSObject {
     var rate : Int?
     var created : String?
 
-    
+    override init() {
+        
+    }
     init(review:JSON) {
         
         if let re_id = review["id"].int {
@@ -44,7 +46,12 @@ class Review: NSObject {
         }
         if let create = review["created"].string {
             
-            created = create
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+            dateFormatter.timeZone = TimeZone(abbreviation: "GMT+3:00")
+            let date = dateFormatter.date(from: create)
+            print ("hiiii\(date)")
+            created = date?.displayTimeFromNow()
         }
     }
 }

@@ -1,17 +1,16 @@
 //
-//  Manager.swift
-//  HomeScreen_TaskPerfect
+//  SplashManager.swift
+//  Seebo Project 
 //
-//  Created by Admin on 9/12/18.
+//  Created by Admin on 10/1/18.
 //  Copyright © 2018 Admin. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
-class Manager: NSObject {
-    
-    static let manager = Manager()
-    private let dataAccess = LocalDataAcess()
+class SplashManager: NSObject {
+    static let manager = SplashManager()
+    private let dataAccess = ApiDataAcessLayer()
     var allItems:[Item]!
     
     private override init() {

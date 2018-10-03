@@ -7,20 +7,33 @@
 //
 
 import UIKit
+import CoreLocation
 
-class ViewController: UIViewController,ViewPro {
+class HomeScreenViewController: UIViewController,HomeViewPro {
    
-    var presenter : PresenterPro!
+    var presenter : HomePresenterPro!
+    var items = [Item]()
     var isSearch:Bool=false
     @IBOutlet weak var collectionview: UICollectionView!
     @IBOutlet weak var searchbar: UISearchBar!
+    var checkedItems:NSMutableArray!
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
+//        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+//        let tabController = mainStoryboard.instantiateViewController(withIdentifier: "TabBarController") as! UITabBarController
+//        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+//        appDelegate.window?.rootViewController = tabController
         self.configureCollectionView()
         self.configureSearchBar()
-        presenter = Presenter(viewinit: self)
+        presenter = HomePresenter(viewinit: self)
+        presenter.setItems(items: items)
+        checkedItems = NSMutableArray()
+//        var userDefaults = UserDefaults.standard
+//        let locationData  = userDefaults.object(forKey: "location") as! Data
+//        let location = NSKeyedUnarchiver.unarchiveObject(with: locationData) as! CLLocation
+//        print("jahsfkjashsfsf\(location.coordinate.longitude)")
     }
     
     func reloadfunc() {
@@ -39,7 +52,7 @@ class ViewController: UIViewController,ViewPro {
     }
 }
 
-extension ViewController: UICollectionViewDataSource {
+extension HomeScreenViewController:UICollectionViewDataSource ,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout{
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         
@@ -59,7 +72,7 @@ extension ViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionCell", for: indexPath) as! CollectionViewCell
         var items=[Item]()
         if (isSearch)
         {
@@ -72,21 +85,27 @@ extension ViewController: UICollectionViewDataSource {
         cell.configure(item: items[indexPath.row])
         return cell
     }
-}
-
-extension ViewController :UICollectionViewDelegate {
-    //action
-}
-
-extension ViewController :UICollectionViewDelegateFlowLayout {
-   
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-       
+        
         return CGSize(width: collectionview.frame.width*0.31, height: collectionview.frame.height)
+    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+         let cell = collectionView.cellForItem(at: indexPath) as! CollectionViewCell
+        cell.checkmark.image = #imageLiteral(resourceName: "checkmark")
+        var items = presenter.getItems()
+        checkedItems.add(items[indexPath.row])
+        print(checkedItems.count)
+    }
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath) as! CollectionViewCell
+        cell.checkmark.image = UIImage()
+        var items = presenter.getItems()
+        checkedItems.remove(items[indexPath.row])
+        print(checkedItems.count)
     }
 }
 
-extension ViewController :UISearchBarDelegate {
+extension HomeScreenViewController :UISearchBarDelegate {
     
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
         
@@ -126,6 +145,8 @@ extension ViewController :UISearchBarDelegate {
         
         collectionview.delegate = self
         collectionview.dataSource = self
+        collectionview.register(UINib(nibName: "CollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CollectionCell")
+        collectionview.allowsMultipleSelection = true
     }
     
     func configureSearchBar() {

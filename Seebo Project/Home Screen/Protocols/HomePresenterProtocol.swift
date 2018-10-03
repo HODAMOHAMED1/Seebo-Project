@@ -7,10 +7,11 @@
 //
 
 import Foundation
-protocol PresenterPro {
+protocol HomePresenterPro {
     
     func getNumberOfItems()->Int
     func getNumberOfSections()->Int
+    func setItems(items :[Item])
     func getItems()->[Item]
     func FilteredData(searchText:String)
     func getNumberOfFilters()->Int

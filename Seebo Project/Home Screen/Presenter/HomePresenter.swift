@@ -8,21 +8,19 @@
 
 import Foundation
 
-class Presenter: NSObject,PresenterPro {
+class HomePresenter: NSObject,HomePresenterPro {
     
-    var view :ViewPro
+    var view :HomeViewPro
     var items = [Item]()
     var filterdata = [Item]()
     
-    init(viewinit:ViewPro) {
+    init(viewinit:HomeViewPro) {
         
         self.view = viewinit
         super.init()
-        Manager.manager.getItems(onSuccess: {
-            [unowned self] (items) in
-            self.items = items
-        })
-        viewinit.reloadfunc()
+    }
+    func setItems( items :[Item]) {
+        self.items = items
     }
     
     func getNumberOfSections() -> Int {

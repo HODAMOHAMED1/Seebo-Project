@@ -13,6 +13,7 @@ class CollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var describtion: UILabel!
     
+    @IBOutlet weak var checkmark: UIImageView!
     func configure(item:Item)
     {
         if let imagedescrib = item.imageDescription{

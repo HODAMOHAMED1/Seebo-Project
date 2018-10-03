@@ -19,7 +19,6 @@ class MapViewController: UIViewController, MapViewPro {
     @IBOutlet weak var tableview: UITableView!
     @IBOutlet weak var searchbar: UISearchBar!
     @IBOutlet weak var UpperView: UIView!
-    @IBOutlet weak var searchlabel: UILabel!
     
     override func viewDidLoad() {
         
@@ -37,7 +36,6 @@ class MapViewController: UIViewController, MapViewPro {
         
         self.tableview.reloadData()
         self.map.clear()
-        self.setMylocation()
         self.setMarkers()
     }
     
@@ -59,15 +57,6 @@ class MapViewController: UIViewController, MapViewPro {
             marker.map = map
         }
     }
-    func setMylocation() {
-        
-        let marker = GMSMarker()
-        marker.position = CLLocationCoordinate2DMake(userLocation.coordinate.latitude,userLocation.coordinate.longitude)
-        print ("position\(marker.position)")
-        marker.title = "My Location"
-        marker.icon = #imageLiteral(resourceName: "mylocation")
-        marker.map = map
-    }
     
     func accessLocation() {
         //when we request access to the location even when the App is closed
@@ -82,8 +71,7 @@ class MapViewController: UIViewController, MapViewPro {
     }
     
     func configureUpperView() {
-        
-        searchlabel.textColor = UIColor(red: 0.1569, green: 0.2314, blue: 0.5333, alpha: 1.0)
+        UIApplication.shared.statusBarStyle = UIStatusBarStyle.lightContent
         UpperView.backgroundColor = UIColor(red: 0.9922, green: 0.7529, blue: 0.0863, alpha: 1.0)
         searchbar.placeholder="Find nearest items"
         searchbar.layer.borderWidth = 3
@@ -131,7 +119,6 @@ extension MapViewController: CLLocationManagerDelegate {
                                                   longitude: userLocation.coordinate.longitude, zoom: 6)
             self.map.camera = camera
             self.map.animate(to:camera)
-            self.setMylocation()
             self.map.isMyLocationEnabled = true
             locationManager.stopUpdatingLocation() // we use it if we want to stop any update in location
         }
@@ -141,7 +128,7 @@ extension MapViewController: CLLocationManagerDelegate {
 //  }
 }
 
-extension MapViewController: UITableViewDataSource {
+extension MapViewController: UITableViewDataSource,UITableViewDelegate {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         
@@ -159,13 +146,9 @@ extension MapViewController: UITableViewDataSource {
         cell.configure(advertis: presenter.getAdvertisments()[indexPath.row])
         return cell
     }
-}
-
-extension MapViewController: UITableViewDelegate {
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-       print("selected")
+        print("selected")
         performSegue(withIdentifier: "details", sender: self)
     }
 }

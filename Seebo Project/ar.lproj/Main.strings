@@ -1,0 +1,54 @@
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "3Bs-UL-bbr"; */
+"3Bs-UL-bbr.text" = "Label";
+
+/* Class = "UILabel"; text = "Back"; ObjectID = "6Ph-DQ-H9V"; */
+"6Ph-DQ-H9V.text" = "Back";
+
+/* Class = "UILabel"; text = "Write Comment"; ObjectID = "7Pc-AR-sWz"; */
+"7Pc-AR-sWz.text" = "Write Comment";
+
+/* Class = "UILabel"; text = "looking"; ObjectID = "F8B-1s-sGT"; */
+"F8B-1s-sGT.text" = "looking";
+
+/* Class = "UITextView"; text = "hello how much fot this one ?"; ObjectID = "FlQ-wi-gB3"; */
+"FlQ-wi-gB3.text" = "hello how much fot this one ?";
+
+/* Class = "UITabBarItem"; title = "Item"; ObjectID = "Gbe-In-mfa"; */
+"Gbe-In-mfa.title" = "Item";
+
+/* Class = "UITabBarItem"; title = "Profile"; ObjectID = "NIp-Je-arf"; */
+"NIp-Je-arf.title" = "Profile";
+
+/* Class = "UISearchBar"; placeholder = "Search"; ObjectID = "SNb-Zo-0v9"; */
+"SNb-Zo-0v9.placeholder" = "Search";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Snq-6c-bBJ"; */
+"Snq-6c-bBJ.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Nearest"; ObjectID = "TZJ-OB-rbd"; */
+"TZJ-OB-rbd.normalTitle" = "Nearest";
+
+/* Class = "UILabel"; text = "Related Items"; ObjectID = "dRx-ij-lh0"; */
+"dRx-ij-lh0.text" = "Related Items";
+
+/* Class = "UIButton"; normalTitle = "Feature"; ObjectID = "gcm-Hb-hqG"; */
+"gcm-Hb-hqG.normalTitle" = "Feature";
+
+/* Class = "UITabBarItem"; title = "Notification"; ObjectID = "mpL-uQ-E0n"; */
+"mpL-uQ-E0n.title" = "Notification";
+
+/* Class = "UILabel"; text = "for?"; ObjectID = "nor-uU-HIc"; */
+"nor-uU-HIc.text" = "for?";
+
+/* Class = "UIButton"; normalTitle = "Post"; ObjectID = "qfI-fi-onG"; */
+"qfI-fi-onG.normalTitle" = "Post";
+
+/* Class = "UIButton"; normalTitle = "Ask Seller"; ObjectID = "qfP-6h-gf4"; */
+"qfP-6h-gf4.normalTitle" = "Ask Seller";
+
+/* Class = "UILabel"; text = "What"; ObjectID = "viw-WX-qql"; */
+"viw-WX-qql.text" = "What";
+
+/* Class = "UITabBarItem"; title = "Home"; ObjectID = "zw7-qI-xDQ"; */
+"zw7-qI-xDQ.title" = "Home";
