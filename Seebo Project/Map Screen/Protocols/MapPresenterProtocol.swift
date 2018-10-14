@@ -17,4 +17,5 @@ protocol MapPresenterPro {
     func getNumberOfAdvertisments()-> Int
     func getAdvertisments()->[advertisment]
     func getAdvertisment(index:Int)->advertisment
+    func getDataDefaultLocation()
 }

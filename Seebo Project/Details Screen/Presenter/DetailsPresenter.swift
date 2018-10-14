@@ -19,7 +19,7 @@ class DetailsPresenter: NSObject,DetailsPresenterPro{
     }
     
     func getAllReviewsById(id:Int) {
-        DetailsManager.manager.getReviews(url: "http://50.87.52.41/~develps7/Seebo-me/web/app_dev.php/en/api/advertisement/review-filter", id: id, onSuccess: { allreviews in
+        DetailsManager.manager.getReviews(url: Constants.allReviewsApi, id: id, onSuccess: { allreviews in
             self.reviews = allreviews
             self.view.reloadData()
             print(self.reviews.count)

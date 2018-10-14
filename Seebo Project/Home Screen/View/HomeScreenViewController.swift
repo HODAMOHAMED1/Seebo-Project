@@ -87,7 +87,7 @@ extension HomeScreenViewController:UICollectionViewDataSource ,UICollectionViewD
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        return CGSize(width: collectionview.frame.width*0.31, height: collectionview.frame.height)
+        return CGSize(width: collectionview.frame.size.width*(0.28), height: collectionview.frame.size.height)
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
          let cell = collectionView.cellForItem(at: indexPath) as! CollectionViewCell

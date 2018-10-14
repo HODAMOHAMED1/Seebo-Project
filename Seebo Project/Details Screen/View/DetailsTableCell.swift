@@ -13,13 +13,10 @@ class DetailsTableCell: UITableViewCell {
     @IBOutlet weak var title_details: UILabel!
     @IBOutlet weak var value_details: UILabel!
     
-    func configure(attributes:[Attribute]) {
+    func configure(attributes:Attribute) {
         
-        for i in 0...attributes.count-1 {
-            
-            title_details.text = attributes[i].attribute_title
-            value_details.text = attributes[i].subattribute_title
-        }
+            title_details.text = attributes.attribute_title
+            value_details.text = attributes.subattribute_title
     }
     
     override func awakeFromNib() {

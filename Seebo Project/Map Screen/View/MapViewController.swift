@@ -60,16 +60,24 @@ class MapViewController: UIViewController, MapViewPro {
     
     func accessLocation() {
         //when we request access to the location even when the App is closed
-        locationManager.requestAlwaysAuthorization()
+        locationManager.delegate = self
         if(CLLocationManager.locationServicesEnabled())
         {
-            print("acess")
-            locationManager.delegate = self
-            locationManager.desiredAccuracy = kCLLocationAccuracyBest // location accuracy
-            locationManager.startUpdatingLocation()
+            switch(CLLocationManager.authorizationStatus()) {
+            case .notDetermined,.restricted, .denied:
+                print("No access")
+                locationManager.requestAlwaysAuthorization()
+                break
+            case .authorizedAlways, .authorizedWhenInUse:
+                print("Access")
+                locationManager.desiredAccuracy = kCLLocationAccuracyBest // location accuracy
+                locationManager.startUpdatingLocation()
+                break
+            }
+        }else{
+            presenter.getDataDefaultLocation()
         }
     }
-    
     func configureUpperView() {
         UIApplication.shared.statusBarStyle = UIStatusBarStyle.lightContent
         UpperView.backgroundColor = UIColor(red: 0.9922, green: 0.7529, blue: 0.0863, alpha: 1.0)
@@ -123,9 +131,19 @@ extension MapViewController: CLLocationManagerDelegate {
             locationManager.stopUpdatingLocation() // we use it if we want to stop any update in location
         }
     }
-//   func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-//       <#code#>
-//  }
+   func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+    switch status {
+        
+    case .restricted, .denied, .notDetermined:
+        print("change to denied")
+        locationManager.requestAlwaysAuthorization()
+         presenter.getDataDefaultLocation()
+        break
+    case .authorizedAlways, .authorizedWhenInUse:
+        self.accessLocation()
+        break
+    }
+  }
 }
 
 extension MapViewController: UITableViewDataSource,UITableViewDelegate {

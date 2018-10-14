@@ -1,27 +1,25 @@
 //
-//  ApiDataAccess.swift
+//  Network.swift
 //  Seebo Project 
 //
-//  Created by Admin on 9/16/18.
+//  Created by Admin on 10/11/18.
 //  Copyright © 2018 Admin. All rights reserved.
 //
 
+import UIKit
 import Foundation
-import Alamofire
 import SwiftyJSON
+import Alamofire
 
-class ApiLocalDataAcess: NSObject {
+class Network: NSObject {
     
-    func getAdvertesments(url:String,longitude:String,latitude:String,onSuccess success:@escaping (_ json:JSON)->Void) {
-        
-        let param = [
-                "lng":longitude,
-                "lat":latitude
-                 ]
+    class func requestPostApi(url:String,param:[String : AnyObject]?,onSuccess success:@escaping (_ json:JSON)->Void){
+        let urlStr = Constants.apiLink+Constants.appLang+"/api/"+url
         let headers = ["token":"6e14ebecfa5341ec16d7649e623a71968d0c0105",
                        "Content-Type": "application/json"]
         
-        Alamofire.request(url, method:.post, parameters: param, encoding: JSONEncoding.default, headers:headers).responseJSON(completionHandler: { response in
+            Alamofire.request(urlStr, method:.post, parameters: param, encoding: JSONEncoding.default, headers:headers).responseJSON(completionHandler: { response in
+                
             guard response.result.error==nil else
             {
                 print("error calling POST")

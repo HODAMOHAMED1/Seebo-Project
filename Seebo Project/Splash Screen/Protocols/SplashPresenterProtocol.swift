@@ -11,7 +11,7 @@ import CoreLocation
 
 protocol SplashPresenterProtocol {
     
-    func getItems()->[Item]
+    func getItems(location:CLLocation)
     func setLocation(location: CLLocation)
-    func getLocation()->CLLocation 
+    func getLocation()->CLLocation?
 }

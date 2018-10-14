@@ -12,7 +12,7 @@ import SwiftyJSON
 class MapManager: NSObject {
     
     static let manager = MapManager()
-    private let dataAccess = ApiLocalDataAcess()
+    //private let dataAccess = ApiLocalDataAcess()
     var allAdvert = [advertisment]()
     
     private override init() {
@@ -20,7 +20,11 @@ class MapManager: NSObject {
     
     func getAdvertisments(url:String,long:String,lat:String,onSuccess success:@escaping (_ advertisments:[advertisment])->Void) {
         
-        dataAccess.getAdvertesments(url:url,longitude:long, latitude:lat, onSuccess: { json in
+        let param = [
+            "lng":long,
+            "lat":lat
+        ]
+        Network.requestPostApi(url: url, param: param as [String : AnyObject], onSuccess:{ json in
             let advertisments = json["data"]["list"]
            print("rrrrrrrrrr\(advertisments.count)")
              self.allAdvert.removeAll()

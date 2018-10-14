@@ -22,7 +22,7 @@ class MapPresenter: NSObject,MapPresenterPro {
     
     func getAllAdvertisments(long:String,lat:String) {
         
-        MapManager.manager.getAdvertisments(url: "http://50.87.52.41/~develps7/Seebo-me/web/app_dev.php/en/api/advertisement/filter", long: long, lat: lat, onSuccess: { alladversts in
+        MapManager.manager.getAdvertisments(url: Constants.advertisementFilterApi, long: long, lat: lat, onSuccess: { alladversts in
             self.advertisments = alladversts
             self.view.reloadData()
             print(self.advertisments.count)
@@ -50,5 +50,12 @@ class MapPresenter: NSObject,MapPresenterPro {
     func getAdvertisment(index:Int)->advertisment {
         
         return advertisments[index]
+    }
+    func getDataDefaultLocation() {
+        var location : CLLocation!
+        var userDefaults = UserDefaults.standard
+        let locationData  = userDefaults.object(forKey: "location") as! Data
+        location = NSKeyedUnarchiver.unarchiveObject(with: locationData) as! CLLocation
+        self.setLocation(location: location)
     }
 }

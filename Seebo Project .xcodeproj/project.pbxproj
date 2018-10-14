@@ -13,12 +13,10 @@
 		840ADFFE214F093F004491B6 /* Attribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840ADFFD214F093F004491B6 /* Attribute.swift */; };
 		841AA0132160CBC600D8AB61 /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 841AA0122160CBC600D8AB61 /* CollectionViewCell.xib */; };
 		841ED968215551BD00BC59EC /* DetailsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841ED967215551BC00BC59EC /* DetailsManager.swift */; };
-		841ED96A2155524600BC59EC /* DataAcessLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841ED9692155524600BC59EC /* DataAcessLayer.swift */; };
 		841ED96C21555C4E00BC59EC /* DetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841ED96B21555C4E00BC59EC /* DetailsPresenter.swift */; };
 		841ED96E21555E2A00BC59EC /* DetailsViewPro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841ED96D21555E2A00BC59EC /* DetailsViewPro.swift */; };
 		841ED97021555E6000BC59EC /* DetailsPresenterPro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841ED96F21555E6000BC59EC /* DetailsPresenterPro.swift */; };
 		8428E3F6214E4D4700051E39 /* MapManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8428E3F5214E4D4700051E39 /* MapManager.swift */; };
-		8428E3F8214E4D9000051E39 /* ApiDataAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8428E3F7214E4D9000051E39 /* ApiDataAccess.swift */; };
 		8428E3FA214E4DAE00051E39 /* MapModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8428E3F9214E4DAE00051E39 /* MapModel.swift */; };
 		8428E3FC214E4DC100051E39 /* MapPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8428E3FB214E4DC100051E39 /* MapPresenter.swift */; };
 		8428E3FE214E4DFE00051E39 /* MapViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8428E3FD214E4DFE00051E39 /* MapViewProtocol.swift */; };
@@ -63,7 +61,6 @@
 		8449B8842149266D00D66A8C /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8449B8832149266D00D66A8C /* HomePresenter.swift */; };
 		8449B886214926A600D66A8C /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8449B885214926A600D66A8C /* HomeModel.swift */; };
 		8449B888214926E200D66A8C /* HomeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8449B887214926E200D66A8C /* HomeManager.swift */; };
-		8449B88A2149271000D66A8C /* LocalDataAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8449B8892149271000D66A8C /* LocalDataAccess.swift */; };
 		8449B88C214953F900D66A8C /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8449B88B214953F900D66A8C /* CollectionViewCell.swift */; };
 		8450A385215679F8001CE4E5 /* HeaderDetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8450A384215679F8001CE4E5 /* HeaderDetailsCell.swift */; };
 		8450A38721567A3D001CE4E5 /* HeaderDetailsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8450A38621567A3D001CE4E5 /* HeaderDetailsCell.xib */; };
@@ -71,6 +68,9 @@
 		84594C43215BC12F006BAEB1 /* RateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84594C42215BC12F006BAEB1 /* RateView.xib */; };
 		84594C45215BC166006BAEB1 /* RateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84594C44215BC166006BAEB1 /* RateView.swift */; };
 		846013502155AB0700B1033E /* ImageSlideshow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8460134F2155AB0700B1033E /* ImageSlideshow.framework */; };
+		8465D73F216642980037B01A /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8465D73E216642980037B01A /* Alert.swift */; };
+		84836951216F3C07008BA444 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84836950216F3C07008BA444 /* Network.swift */; };
+		84836954216F70E6008BA444 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84836953216F70E6008BA444 /* Constants.swift */; };
 		849EB256215275CC009D949D /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849EB255215275CC009D949D /* DetailsViewController.swift */; };
 		849F1CEC2161883A009AC814 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849F1CEB2161883A009AC814 /* SplashViewController.swift */; };
 		84AB54C0215FE9B300E3B028 /* Cosmos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84AB54BF215FE9B300E3B028 /* Cosmos.framework */; };
@@ -108,12 +108,10 @@
 		840ADFFD214F093F004491B6 /* Attribute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Attribute.swift; sourceTree = "<group>"; };
 		841AA0122160CBC600D8AB61 /* CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
 		841ED967215551BC00BC59EC /* DetailsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsManager.swift; sourceTree = "<group>"; };
-		841ED9692155524600BC59EC /* DataAcessLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataAcessLayer.swift; sourceTree = "<group>"; };
 		841ED96B21555C4E00BC59EC /* DetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsPresenter.swift; sourceTree = "<group>"; };
 		841ED96D21555E2A00BC59EC /* DetailsViewPro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewPro.swift; sourceTree = "<group>"; };
 		841ED96F21555E6000BC59EC /* DetailsPresenterPro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsPresenterPro.swift; sourceTree = "<group>"; };
 		8428E3F5214E4D4700051E39 /* MapManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapManager.swift; sourceTree = "<group>"; };
-		8428E3F7214E4D9000051E39 /* ApiDataAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiDataAccess.swift; sourceTree = "<group>"; };
 		8428E3F9214E4DAE00051E39 /* MapModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapModel.swift; sourceTree = "<group>"; };
 		8428E3FB214E4DC100051E39 /* MapPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPresenter.swift; sourceTree = "<group>"; };
 		8428E3FD214E4DFE00051E39 /* MapViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewProtocol.swift; sourceTree = "<group>"; };
@@ -164,7 +162,6 @@
 		8449B8832149266D00D66A8C /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
 		8449B885214926A600D66A8C /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 		8449B887214926E200D66A8C /* HomeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeManager.swift; sourceTree = "<group>"; };
-		8449B8892149271000D66A8C /* LocalDataAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataAccess.swift; sourceTree = "<group>"; };
 		8449B88B214953F900D66A8C /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		8450A384215679F8001CE4E5 /* HeaderDetailsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderDetailsCell.swift; sourceTree = "<group>"; };
 		8450A38621567A3D001CE4E5 /* HeaderDetailsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderDetailsCell.xib; sourceTree = "<group>"; };
@@ -173,8 +170,11 @@
 		84594C44215BC166006BAEB1 /* RateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateView.swift; sourceTree = "<group>"; };
 		8460134D2155A4D700B1033E /* ImageSlideshow.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ImageSlideshow.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8460134F2155AB0700B1033E /* ImageSlideshow.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ImageSlideshow.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8465D73E216642980037B01A /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		846A2B232163B56200714EF6 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Main.strings; sourceTree = "<group>"; };
 		846A2B242163B56300714EF6 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		84836950216F3C07008BA444 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		84836953216F70E6008BA444 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		849EB255215275CC009D949D /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		849F1CEB2161883A009AC814 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		84AB54BF215FE9B300E3B028 /* Cosmos.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Cosmos.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -232,7 +232,6 @@
 			isa = PBXGroup;
 			children = (
 				8428E3F5214E4D4700051E39 /* MapManager.swift */,
-				8428E3F7214E4D9000051E39 /* ApiDataAccess.swift */,
 			);
 			path = DataAcessLayer;
 			sourceTree = "<group>";
@@ -261,6 +260,7 @@
 				8428E401214E4E8800051E39 /* MapViewController.swift */,
 				842F9F0A214FAE00008E0C76 /* TableViewCell.swift */,
 				8431114B21514D2E005BF612 /* DiscoverCell.swift */,
+				8431114921514C88005BF612 /* DiscoverCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -310,7 +310,6 @@
 				84324AC32148737F00B172BE /* LaunchScreen.storyboard */,
 				84324AC62148737F00B172BE /* Info.plist */,
 				84324ABE2148735F00B172BE /* HomeScreen_TaskPerfect.xcdatamodeld */,
-				8431114921514C88005BF612 /* DiscoverCell.xib */,
 			);
 			path = "Seebo Project";
 			sourceTree = "<group>";
@@ -367,7 +366,6 @@
 			isa = PBXGroup;
 			children = (
 				8449B887214926E200D66A8C /* HomeManager.swift */,
-				8449B8892149271000D66A8C /* LocalDataAccess.swift */,
 			);
 			path = DataAcessLayer;
 			sourceTree = "<group>";
@@ -435,6 +433,43 @@
 			path = DataAcessLayer;
 			sourceTree = "<group>";
 		};
+		843F60DF2171631D00097712 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				84C122EC215926200023ABC6 /* SearchBar.swift */,
+				84594C40215B77A0006BAEB1 /* DisplayTime.swift */,
+				843E8AC92162329100834FC5 /* Connection.swift */,
+				8465D73E216642980037B01A /* Alert.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		843F60E02171637100097712 /* XibViews */ = {
+			isa = PBXGroup;
+			children = (
+				842B761A215A345100404155 /* NavigationBarView.xib */,
+				842B761C215A36FE00404155 /* NavigationBarView.swift */,
+			);
+			path = XibViews;
+			sourceTree = "<group>";
+		};
+		8483694F216F3B58008BA444 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				84836950216F3C07008BA444 /* Network.swift */,
+			);
+			name = Network;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		84836952216F65A5008BA444 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				84836953216F70E6008BA444 /* Constants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
 		849EB24F21526C42009D949D /* Details Screen */ = {
 			isa = PBXGroup;
 			children = (
@@ -497,7 +532,6 @@
 			isa = PBXGroup;
 			children = (
 				841ED967215551BC00BC59EC /* DetailsManager.swift */,
-				841ED9692155524600BC59EC /* DataAcessLayer.swift */,
 			);
 			path = DataAcessLayer;
 			sourceTree = "<group>";
@@ -517,11 +551,10 @@
 		84C122EB215923660023ABC6 /* CommonClasses */ = {
 			isa = PBXGroup;
 			children = (
-				84C122EC215926200023ABC6 /* SearchBar.swift */,
-				842B761A215A345100404155 /* NavigationBarView.xib */,
-				842B761C215A36FE00404155 /* NavigationBarView.swift */,
-				84594C40215B77A0006BAEB1 /* DisplayTime.swift */,
-				843E8AC92162329100834FC5 /* Connection.swift */,
+				843F60E02171637100097712 /* XibViews */,
+				843F60DF2171631D00097712 /* Classes */,
+				84836952216F65A5008BA444 /* Constants */,
+				8483694F216F3B58008BA444 /* Network */,
 			);
 			name = CommonClasses;
 			path = "New Group";
@@ -766,7 +799,7 @@
 				8449B86E2149067200D66A8C /* Third ViewController.swift in Sources */,
 				843E8AC8216223C700834FC5 /* SplashPresenterProtocol.swift in Sources */,
 				843B6A052152FC7100ECD369 /* DetailsTableCell.swift in Sources */,
-				841ED96A2155524600BC59EC /* DataAcessLayer.swift in Sources */,
+				8465D73F216642980037B01A /* Alert.swift in Sources */,
 				841ED96E21555E2A00BC59EC /* DetailsViewPro.swift in Sources */,
 				8428E3F6214E4D4700051E39 /* MapManager.swift in Sources */,
 				8428E3FE214E4DFE00051E39 /* MapViewProtocol.swift in Sources */,
@@ -774,7 +807,6 @@
 				8431114C21514D2E005BF612 /* DiscoverCell.swift in Sources */,
 				84594C45215BC166006BAEB1 /* RateView.swift in Sources */,
 				8449B8822149260F00D66A8C /* HomePresenterProtocol.swift in Sources */,
-				8428E3F8214E4D9000051E39 /* ApiDataAccess.swift in Sources */,
 				841ED96C21555C4E00BC59EC /* DetailsPresenter.swift in Sources */,
 				843B6A0D2153264D00ECD369 /* User.swift in Sources */,
 				8449B880214925F500D66A8C /* HomeViewProtocol.swift in Sources */,
@@ -786,9 +818,10 @@
 				8428E400214E4E2300051E39 /* MapPresenterProtocol.swift in Sources */,
 				849F1CEC2161883A009AC814 /* SplashViewController.swift in Sources */,
 				843E8AC22162232A00834FC5 /* SplashModel.swift in Sources */,
-				8449B88A2149271000D66A8C /* LocalDataAccess.swift in Sources */,
 				843B6A0921531C9100ECD369 /* ReviewCell.swift in Sources */,
+				84836951216F3C07008BA444 /* Network.swift in Sources */,
 				8449B86C214901F800D66A8C /* Second ViewController.swift in Sources */,
+				84836954216F70E6008BA444 /* Constants.swift in Sources */,
 				841ED968215551BD00BC59EC /* DetailsManager.swift in Sources */,
 				8449B888214926E200D66A8C /* HomeManager.swift in Sources */,
 				8450A385215679F8001CE4E5 /* HeaderDetailsCell.swift in Sources */,

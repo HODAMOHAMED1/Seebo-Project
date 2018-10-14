@@ -19,13 +19,13 @@
                 <rect key="frame" x="0.0" y="0.0" width="414" height="54.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="passenger" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ck8-fe-OW3">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="passenger" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ck8-fe-OW3">
                         <rect key="frame" x="15" y="15" width="86.5" height="20.5"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sE0-0l-gdh">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sE0-0l-gdh">
                         <rect key="frame" x="310.5" y="15" width="11" height="25"/>
                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
@@ -33,11 +33,12 @@
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="sE0-0l-gdh" firstAttribute="leading" secondItem="Ck8-fe-OW3" secondAttribute="trailing" constant="209" id="9qz-hh-tR6"/>
                     <constraint firstItem="sE0-0l-gdh" firstAttribute="top" secondItem="McY-Ky-IzJ" secondAttribute="topMargin" constant="4" id="Aoh-Oc-tbo"/>
                     <constraint firstAttribute="bottom" secondItem="Ck8-fe-OW3" secondAttribute="bottom" constant="19" id="EHH-9S-jjy"/>
                     <constraint firstItem="Ck8-fe-OW3" firstAttribute="top" secondItem="McY-Ky-IzJ" secondAttribute="top" constant="15" id="KjY-ey-eHR"/>
                     <constraint firstAttribute="trailing" secondItem="sE0-0l-gdh" secondAttribute="trailing" constant="92.5" id="bOC-Gi-rTB"/>
+                    <constraint firstAttribute="bottom" secondItem="sE0-0l-gdh" secondAttribute="bottom" constant="14.5" id="cQv-et-N1e"/>
+                    <constraint firstItem="sE0-0l-gdh" firstAttribute="top" secondItem="McY-Ky-IzJ" secondAttribute="top" constant="15" id="dWu-Kp-yye"/>
                     <constraint firstAttribute="bottomMargin" secondItem="sE0-0l-gdh" secondAttribute="bottom" constant="4" id="hpf-qL-5oH"/>
                     <constraint firstItem="Ck8-fe-OW3" firstAttribute="leading" secondItem="McY-Ky-IzJ" secondAttribute="leading" constant="15" id="mR4-uo-xHp"/>
                 </constraints>

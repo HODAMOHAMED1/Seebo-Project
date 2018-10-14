@@ -17,13 +17,12 @@ class DetailsViewController: UIViewController ,UIScrollViewDelegate,DetailsViewP
     @IBOutlet weak var scrollview: UIScrollView!
     @IBOutlet weak var cardDetails: CardViewDetails!
     @IBOutlet weak var tableViewHight: NSLayoutConstraint!
-    
     @IBOutlet weak var tableReviewHight: NSLayoutConstraint!
     @IBOutlet weak var tableview: UITableView!
     @IBOutlet weak var tableviewReview: UITableView!
     @IBOutlet weak var usercontact: UserContact!
-    @IBOutlet weak var imageslides: ImageSlideshow!
-    
+    @IBOutlet weak var imageShow: UIImageView!
+    @IBOutlet weak var pager: UIPageControl!
     @IBOutlet weak var rateview: CosmosView!
     @IBOutlet weak var commentTextView: UITextView!
     @IBOutlet weak var postButton: UIButton!
@@ -35,11 +34,13 @@ class DetailsViewController: UIViewController ,UIScrollViewDelegate,DetailsViewP
     var advertisment : advertisment!
     var presenter:DetailsPresenterPro!
     var inputs = [InputSource]()
-    
+    var i = Int()
+    var images = [String]()
     override func viewDidLoad() {
         super.viewDidLoad() 
         self.navigationController?.setNavigationBarHidden(true, animated: true)
         presenter = DetailsPresenter(view: self)
+        configurePageControl()
         configurImageSlides()
         configurTableView()
         configureCommentView()
@@ -79,30 +80,66 @@ class DetailsViewController: UIViewController ,UIScrollViewDelegate,DetailsViewP
         askSellerHight.priority = UILayoutPriority(rawValue: 999)
         askSellerHight.constant = 50
         commentViewHight.constant = 0
-        UIView.animate(withDuration: 0.1, animations: {
+        UIView.animate(withDuration: 0.5, animations: {
             self.view.layoutIfNeeded()
         })
     }
     func configurImageSlides() {
-        var images:[String] = advertisment.images!
-        print("iiiiiiiii\(images.count)")
-        if (images.count > 0) {
-            for i in 0...images.count-1
-        {
-            let iconurl = URL(string: images[i])
-            var imagee = UIImageView()
-            imagee.sd_setImage(with: iconurl,placeholderImage:#imageLiteral(resourceName: "dress"))
-            inputs.append(ImageSource(image:imagee.image!))
+        images = advertisment.images!
+        if (images.count > 0){
+        imageShow.isUserInteractionEnabled=true
+        let swipeLeftGesture=UISwipeGestureRecognizer(target: self, action: #selector(SwipeImage))
+        swipeLeftGesture.direction = UISwipeGestureRecognizerDirection.left
+        imageShow.addGestureRecognizer(swipeLeftGesture)
+        let swipeRightGesture=UISwipeGestureRecognizer(target: self, action: #selector(SwipeImage))
+        swipeRightGesture.direction = UISwipeGestureRecognizerDirection.right
+        imageShow.addGestureRecognizer(swipeRightGesture)
+        i=0
+        let iconurl = URL(string: images[i])
+        imageShow.sd_showActivityIndicatorView()
+        imageShow.sd_setIndicatorStyle(.gray)
+        imageShow.sd_setImage(with: iconurl,placeholderImage:#imageLiteral(resourceName: "dress"))
         }
-        }
-        imageslides.setImageInputs(inputs)
-        imageslides.contentScaleMode = UIViewContentMode.scaleToFill
-        imageslides.pageControl.backgroundColor = UIColor.clear
-        imageslides.pageControl.currentPageIndicatorTintColor = UIColor.gray
-        imageslides.pageControl.pageIndicatorTintColor = UIColor.white
-        imageslides.pageControl.numberOfPages = images.count
-        self.imageslides.reloadInputViews()
     }
+    @objc func SwipeImage(sender:UISwipeGestureRecognizer){
+
+        switch sender.direction{
+        case UISwipeGestureRecognizerDirection.right:
+            if  i <= images.count-1 && i>0{
+                i-=1
+                print(i)
+                let iconurl = URL(string: images[i])
+                imageShow.sd_showActivityIndicatorView()
+                imageShow.sd_setIndicatorStyle(.gray)
+                imageShow.sd_setImage(with: iconurl,placeholderImage:#imageLiteral(resourceName: "dress"))
+                self.pager.currentPage = i
+            }
+            break
+        case UISwipeGestureRecognizerDirection.left:
+            if  i < images.count-1 {
+                i+=1
+                print(i)
+                let iconurl = URL(string: images[i])
+                imageShow.sd_showActivityIndicatorView()
+                imageShow.sd_setIndicatorStyle(.gray)
+                imageShow.sd_setImage(with: iconurl,placeholderImage:#imageLiteral(resourceName: "dress"))
+                self.pager.currentPage = i
+            }
+            break
+        default:
+            print("no swipe")
+        }
+    }
+    func configurePageControl() {
+        // The total number of pages that are available is based on how many available colors we have.
+        self.pager.layer.zPosition = 1
+        self.pager.numberOfPages = images.count
+        self.pager.currentPage = 0
+        self.pager.tintColor = UIColor.blue
+        self.pager.pageIndicatorTintColor = UIColor.black
+        self.pager.currentPageIndicatorTintColor = UIColor.white
+    }
+    
     func configureCommentView() {
         rateview.settings.updateOnTouch = true
         rateview.settings.fillMode = .full
@@ -138,7 +175,7 @@ extension DetailsViewController : UITableViewDelegate,UITableViewDataSource {
         var count :Int?
         if tableView == tableview {
            // advertisment.subattributes?.count
-            count = 2
+            count = advertisment.subattributes?.count
         }
         if tableView == tableviewReview {
             count = presenter.getNumberOfReviews()
@@ -150,13 +187,12 @@ extension DetailsViewController : UITableViewDelegate,UITableViewDataSource {
         
         if tableView == self.tableview {
             let cell = tableView.dequeueReusableCell(withIdentifier: "DetailsCell", for: indexPath) as! DetailsTableCell
-           cell.configure(attributes: advertisment.subattributes!)
+           cell.configure(attributes: advertisment.subattributes![indexPath.row])
             return cell
         }
                 let cell = tableView.dequeueReusableCell(withIdentifier: "ReviewCell", for: indexPath) as! ReviewCell
                 cell.configure(review: presenter.getReview(index: indexPath.row))
         return cell
-        
     }
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         if tableView == self.tableview {
@@ -195,7 +231,7 @@ extension DetailsViewController :UICollectionViewDelegate,UICollectionViewDataSo
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
     
-    return CGSize(width: collectionView.frame.width*0.31, height: collectionView.frame.height)
+    return CGSize(width: collectionView.frame.size.width*(0.3), height: collectionView.frame.size.height)
     }
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         

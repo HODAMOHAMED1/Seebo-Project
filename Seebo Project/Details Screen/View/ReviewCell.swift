@@ -18,6 +18,7 @@ class ReviewCell: UITableViewCell {
     @IBOutlet weak var reviewstr: UITextView!
     
     func configure(review:Review) {
+        reviewstr.isEditable = false
         username.text = review.user?.username
         reviewstr.text = review.review_str
         time.text = review.created
