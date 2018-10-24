@@ -73,6 +73,9 @@ class LoginScreenViewController: UIViewController,LoginViewProtocol{
         }
     }
     @IBAction func forgetPasswordAction(_ sender: UIButton) {
+        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main2", bundle: nil)
+        let ForgetPassController = mainStoryboard.instantiateViewController(withIdentifier: "forget") as! ForgetPasswordViewController
+        navigationController?.pushViewController(ForgetPassController, animated: true)
     }
     func configureTextFields(){
         

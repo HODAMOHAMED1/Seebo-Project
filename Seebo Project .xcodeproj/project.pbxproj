@@ -28,6 +28,7 @@
 		8428E402214E4E8800051E39 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8428E401214E4E8800051E39 /* MapViewController.swift */; };
 		842B761B215A345100404155 /* NavigationBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 842B761A215A345100404155 /* NavigationBarView.xib */; };
 		842B761D215A36FE00404155 /* NavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842B761C215A36FE00404155 /* NavigationBarView.swift */; };
+		842D36EC2180C458004EA255 /* ForgetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842D36EB2180C457004EA255 /* ForgetPasswordViewController.swift */; };
 		842F9F07214FA206008E0C76 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 840ADFFB214E8B35004491B6 /* CoreLocation.framework */; };
 		842F9F0B214FAE00008E0C76 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842F9F0A214FAE00008E0C76 /* TableViewCell.swift */; };
 		8431114A21514C88005BF612 /* DiscoverCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8431114921514C88005BF612 /* DiscoverCell.xib */; };
@@ -149,6 +150,7 @@
 		8428E401214E4E8800051E39 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		842B761A215A345100404155 /* NavigationBarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NavigationBarView.xib; sourceTree = "<group>"; };
 		842B761C215A36FE00404155 /* NavigationBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarView.swift; sourceTree = "<group>"; };
+		842D36EB2180C457004EA255 /* ForgetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordViewController.swift; sourceTree = "<group>"; };
 		842F9F0A214FAE00008E0C76 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		8431114921514C88005BF612 /* DiscoverCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DiscoverCell.xib; sourceTree = "<group>"; };
 		8431114B21514D2E005BF612 /* DiscoverCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverCell.swift; sourceTree = "<group>"; };
@@ -328,6 +330,14 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		842D36EA2180C2C6004EA255 /* ForgetPassword */ = {
+			isa = PBXGroup;
+			children = (
+				842D36EB2180C457004EA255 /* ForgetPasswordViewController.swift */,
+			);
+			path = ForgetPassword;
+			sourceTree = "<group>";
+		};
 		84324AAB2148735E00B172BE = {
 			isa = PBXGroup;
 			children = (
@@ -353,6 +363,7 @@
 		84324AB62148735E00B172BE /* Seebo Project */ = {
 			isa = PBXGroup;
 			children = (
+				842D36EA2180C2C6004EA255 /* ForgetPassword */,
 				847C093521808B1300B0BE19 /* ThanksViewController */,
 				847C093421808AAE00B0BE19 /* TermsViewController */,
 				84C122EB215923660023ABC6 /* CommonClasses */,
@@ -1078,6 +1089,7 @@
 				8450A385215679F8001CE4E5 /* HeaderDetailsCell.swift in Sources */,
 				8428E402214E4E8800051E39 /* MapViewController.swift in Sources */,
 				8428E3FC214E4DC100051E39 /* MapPresenter.swift in Sources */,
+				842D36EC2180C458004EA255 /* ForgetPasswordViewController.swift in Sources */,
 				84324ABA2148735F00B172BE /* HomeScreenViewController.swift in Sources */,
 				8428E3FA214E4DAE00051E39 /* MapModel.swift in Sources */,
 				84C122ED215926200023ABC6 /* SearchBar.swift in Sources */,
