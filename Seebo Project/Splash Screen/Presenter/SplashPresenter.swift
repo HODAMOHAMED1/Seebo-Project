@@ -21,23 +21,8 @@ class SplashPresenter: NSObject ,SplashPresenterProtocol {
         SplashManager.manager.getItems(onSuccess: {
             (items) in
             self.items = items
-            view.setItems(items: items)
+            Helper.setDataToHome(items: items, view: view as! SplashViewController ,splash:0)
         })
     }
-     func setLocation(location: CLLocation){
-        var userDefaults = UserDefaults.standard
-        let encodedData: Data = NSKeyedArchiver.archivedData(withRootObject: location)
-        userDefaults.set(encodedData, forKey: "location")
-        userDefaults.synchronize()
-        view.sendLocation(location: self.getLocation()!)
-    }
-    func getLocation()->CLLocation? {
-        var location : CLLocation?
-        var userDefaults = UserDefaults.standard
-        if let locationData  = userDefaults.object(forKey: "location") {
-            let locationdata = locationData as! Data
-            location = NSKeyedUnarchiver.unarchiveObject(with: locationdata) as! CLLocation
-        }
-        return location
-    }
+     
 }

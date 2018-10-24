@@ -12,13 +12,23 @@ import CoreLocation
 
 class Alert {
     
-    class func showConnectionAlert (title:String,message:String,view:SplashViewController){
+    //MARK:- LocationAlert
+    class func showConnectionAlert (title:String,message:String,view:UIViewController,splash:Int){
         
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "TRY AGAIN", style: UIAlertActionStyle.cancel, handler: {action in view.viewWillAppear(true)}))
+        alert.addAction(UIAlertAction(title: "TRY AGAIN", style: UIAlertActionStyle.cancel, handler: {action in
+            if splash == 0 {
+            (view as! SplashViewController).viewWillAppear(true)
+            }else if splash == 1{
+                (view as! LoginScreenViewController).accessDataToHome()
+            }else{
+                (view as! FBRegisterViewController).accessDataToHome()
+            }
+        }))
         view.present(alert, animated: true, completion: nil)
     }
-    class func showGpsAlert (title:String,message:String,view:SplashViewController){
+    
+    class func showGpsAlert (title:String,message:String,view:UIViewController,splash:Int){
         
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "Open Settings", style: UIAlertActionStyle.default, handler: {(_) -> Void in
@@ -28,13 +38,33 @@ class Alert {
             if UIApplication.shared.canOpenURL(settingsUrl) {
                 UIApplication.shared.open(settingsUrl, completionHandler: { (success) in
                     print("Settings opened: \(success)")
-                    view.accessLocation()
+                    if splash == 0 {
+                    (view as! SplashViewController).accessLocation()
+                    }else{
+                    (view as! LoginScreenViewController).accessLocation()
+                    }
                 })
             }}))
         alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: {action in
             var loc = CLLocation(latitude: 29.315654, longitude: 28.46415)
-            view.sendLocation(location:loc )}))
+             if splash == 0 {
+            (view as! SplashViewController).sendLocation(location:loc )
+             }else{
+                (view as! LoginScreenViewController).sendLocation(location:loc )
+            }
+        }))
         view.present(alert, animated: true, completion: nil)
     }
-    
+    //MARK:- GerneralAlert
+    class func alert(view:UIViewController,title:String,message:String){
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.cancel, handler:nil))
+        view.present(alert, animated: true, completion: nil)
+    }
+    //MARK:- InvalidEmailOrPassword
+    class func invalidEmailOrPassword(view:UIViewController){
+        let alert = UIAlertController(title: "Invalid", message: "Invalid Email Or Password", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.cancel, handler:nil))
+        view.present(alert, animated: true, completion: nil)
+    }
 }

@@ -20,22 +20,23 @@ class SplashViewController: UIViewController,SplashViewProtocol{
         // Do any additional setup after loading the view.
     }
     override func viewWillAppear(_ animated: Bool) {
+        
         if CheckConnection.Connection() {
-           self.accessLocation()
+            if (Constants.isLogin == true){
+                 self.accessLocation()
+            }else{
+                    let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main2", bundle: nil)
+                    let loginController = mainStoryboard.instantiateViewController(withIdentifier: "login") as! LoginScreenViewController
+                    navigationController?.pushViewController(loginController, animated: true)
+                }
         }else {
-            Alert.showConnectionAlert(title: "Oh no !", message:"No internet found. Check your connection or try again" , view: self)
+            Alert.showConnectionAlert(title: "Oh no !", message:"No internet found. Check your connection or try again" , view: self,splash: 0)
         }
     }
     func sendLocation(location:CLLocation){
             presenter.getItems(location: location)
     }
-    func setItems(items:[Item]){
-        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let tabController = mainStoryboard.instantiateViewController(withIdentifier: "TabBarController") as! UITabBarController
-        let home = tabController.viewControllers![0] as! HomeScreenViewController
-        home.items = items
-        navigationController?.pushViewController(tabController, animated: true)
-    }
+   
  
     func accessLocation() {
         //when we request access to the location even when the App is closed
@@ -54,10 +55,10 @@ class SplashViewController: UIViewController,SplashViewProtocol{
                 break
             }
         }else{
-            if presenter.getLocation() != nil {
-                self.sendLocation(location: presenter.getLocation()!)
+            if Helper.getLocation() != nil {
+                self.sendLocation(location: Helper.getLocation()!)
             }else{
-                Alert.showGpsAlert(title: "GPS Not Avalible", message: "Please Open GPS At Least for First Once", view: self)
+                Alert.showGpsAlert(title: "GPS Not Avalible", message: "Please Open GPS At Least for First Once", view: self,splash: 0)
             }
         }
     }
@@ -71,7 +72,8 @@ extension SplashViewController: CLLocationManagerDelegate {
             var userLocation:CLLocation = locations.last!
             print(userLocation.coordinate.longitude)
            locationManager.stopUpdatingLocation()
-           presenter.setLocation(location: userLocation)
+           Helper.setLocation(location: userLocation)
+           self.sendLocation(location: userLocation)
         }else {
             print("no location to show")
         }
@@ -85,8 +87,8 @@ extension SplashViewController: CLLocationManagerDelegate {
         case .restricted, .denied:
             print("change to denied")
             locationManager.requestAlwaysAuthorization()
-            if presenter.getLocation() != nil {
-                self.sendLocation(location: presenter.getLocation()!)
+            if Helper.getLocation() != nil {
+                self.sendLocation(location: Helper.getLocation()!)
             }else{
                 //default location
               var loc = CLLocation(latitude: 29.315654, longitude: 28.46415)

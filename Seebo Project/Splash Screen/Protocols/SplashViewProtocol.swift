@@ -10,6 +10,5 @@ import Foundation
 import CoreLocation
 
 protocol SplashViewProtocol {
-    func setItems(items:[Item])
     func sendLocation(location:CLLocation)
 }

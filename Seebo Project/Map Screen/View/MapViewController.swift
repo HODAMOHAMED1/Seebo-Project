@@ -16,25 +16,29 @@ class MapViewController: UIViewController, MapViewPro {
     var locationManager = CLLocationManager()
     var userLocation = CLLocation()
     @IBOutlet weak var map: GMSMapView!
-    @IBOutlet weak var tableview: UITableView!
     @IBOutlet weak var searchbar: UISearchBar!
     @IBOutlet weak var UpperView: UIView!
+    @IBOutlet weak var collectionView: UICollectionView!
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
         configureUpperView()
-        configureTableView()
+        configureCollectionView()
+        configureStatusBar()
         presenter = MapPresenter(view: self)
     }
     override func viewWillAppear(_ animated: Bool) {
         self.accessLocation()
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
     }
-    
+    override func viewWillLayoutSubviews() {
+        view.layoutIfNeeded()
+        collectionView.collectionViewLayout.invalidateLayout()
+    }
     func reloadData() {
         
-        self.tableview.reloadData()
+        self.collectionView.reloadData()
         self.map.clear()
         self.setMarkers()
     }
@@ -98,22 +102,28 @@ class MapViewController: UIViewController, MapViewPro {
         searchbar.backgroundImage = UIImage()
     }
     
-    func configureTableView() {
-        
-        tableview.delegate = self
-        tableview.dataSource = self
-        tableview.layer.cornerRadius = 20
-        tableview.register(UINib(nibName: "DiscoverCell", bundle: nil), forCellReuseIdentifier: "DiscoverCell")
+    func configureCollectionView() {
+
+     //   tableview.layer.cornerRadius = 20
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.layer.cornerRadius = 15
+        collectionView.register(UINib(nibName: "CollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CollectionCell")
+    }
+    func configureStatusBar (){
+        UIApplication.shared.statusBarStyle = .lightContent
+        UINavigationBar.appearance().clipsToBounds = true
+        let statusBar: UIView = UIApplication.shared.value(forKey: "statusBar") as! UIView
+        statusBar.backgroundColor = UIColor(red: 0.9922, green: 0.7529, blue: 0.0863, alpha: 1.0)
     }
    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         var detailsview = segue.destination as! DetailsViewController
-    if let indexPath = self.tableview.indexPathForSelectedRow {
+    if let indexPath = self.collectionView.indexPathsForSelectedItems?.first {
         let selectedAdvert = presenter.getAdvertisment(index: indexPath.row)
         detailsview.advertisment = selectedAdvert
     }
-    }
 }
-
+}
 extension MapViewController: CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -146,31 +156,41 @@ extension MapViewController: CLLocationManagerDelegate {
   }
 }
 
-extension MapViewController: UITableViewDataSource,UITableViewDelegate {
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        
+extension MapViewController : UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return presenter.getNumberOfAdvertisments()
+            return presenter.getNumberOfAdvertisments()
     }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = tableview.dequeueReusableCell(withIdentifier: "DiscoverCell", for: indexPath) as! DiscoverCell
-        cell.configure(advertis: presenter.getAdvertisments()[indexPath.row])
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionCell", for: indexPath) as! CollectionViewCell
+        cell.configure2(advertis: presenter.getAdvertisments()[indexPath.row])
+        cell.layer.cornerRadius = 15
+        cell.imagee.layer.cornerRadius = 15
+        cell.imagee.layer.masksToBounds = true
         return cell
     }
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
+        return CGSize(width: CGFloat((collectionView.frame.size.width/2)-20), height: collectionView.frame.size.height*(0.9))
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 1
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 1
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsetsMake(5, 10, 5, 10);
+    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("selected")
         performSegue(withIdentifier: "details", sender: self)
     }
 }
-
 
 
 

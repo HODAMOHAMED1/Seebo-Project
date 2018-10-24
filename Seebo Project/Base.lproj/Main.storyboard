@@ -562,27 +562,38 @@
                                 <rect key="frame" x="0.0" y="163.66666666666666" width="414" height="272.33333333333337"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lgt-gw-JkG">
-                                <rect key="frame" x="0.0" y="425" width="414" height="262"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="4wf-7a-8MZ">
+                                <rect key="frame" x="0.0" y="429" width="414" height="258"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </tableView>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="2" minimumInteritemSpacing="5" id="1MV-3h-YFk">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="5" minY="5" maxX="5" maxY="5"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYe-vG-wxM" id="Lwb-6D-Olx"/>
+                                    <outlet property="delegate" destination="BYe-vG-wxM" id="CmH-Eb-JUl"/>
+                                </connections>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="FE3-iB-7oj" firstAttribute="height" secondItem="8Jc-tc-VqM" secondAttribute="height" multiplier="0.1" id="4Ru-YA-gHl"/>
+                            <constraint firstItem="PIW-fu-y3O" firstAttribute="bottom" secondItem="4wf-7a-8MZ" secondAttribute="bottom" id="Dis-YW-3mr"/>
                             <constraint firstItem="M5U-ux-2sY" firstAttribute="height" secondItem="8Jc-tc-VqM" secondAttribute="height" multiplier="0.37" id="ER4-c7-KCw"/>
                             <constraint firstItem="M5U-ux-2sY" firstAttribute="leading" secondItem="8Jc-tc-VqM" secondAttribute="leading" id="HkH-Vk-HuA"/>
                             <constraint firstItem="jBl-eJ-x0c" firstAttribute="top" secondItem="PIW-fu-y3O" secondAttribute="top" id="M3M-Zh-mJN"/>
-                            <constraint firstItem="lgt-gw-JkG" firstAttribute="leading" secondItem="PIW-fu-y3O" secondAttribute="leading" id="M8Z-LG-Ppw"/>
                             <constraint firstItem="PIW-fu-y3O" firstAttribute="trailing" secondItem="jBl-eJ-x0c" secondAttribute="trailing" id="O2N-Dw-VbA"/>
-                            <constraint firstItem="lgt-gw-JkG" firstAttribute="top" secondItem="M5U-ux-2sY" secondAttribute="bottom" constant="-11" id="WpE-c4-rAO"/>
+                            <constraint firstItem="4wf-7a-8MZ" firstAttribute="leading" secondItem="PIW-fu-y3O" secondAttribute="leading" id="Sun-WJ-Fvy"/>
+                            <constraint firstItem="4wf-7a-8MZ" firstAttribute="top" secondItem="M5U-ux-2sY" secondAttribute="bottom" constant="-7" id="VcX-nF-QnI"/>
                             <constraint firstItem="jBl-eJ-x0c" firstAttribute="leading" secondItem="PIW-fu-y3O" secondAttribute="leading" id="dfu-q6-zZd"/>
-                            <constraint firstItem="PIW-fu-y3O" firstAttribute="bottom" secondItem="lgt-gw-JkG" secondAttribute="bottom" id="eu3-np-7ht"/>
+                            <constraint firstItem="PIW-fu-y3O" firstAttribute="trailing" secondItem="4wf-7a-8MZ" secondAttribute="trailing" id="fzt-ez-FP9"/>
                             <constraint firstItem="M5U-ux-2sY" firstAttribute="top" secondItem="FE3-iB-7oj" secondAttribute="bottom" id="g8I-yr-9Gx"/>
                             <constraint firstItem="FE3-iB-7oj" firstAttribute="top" secondItem="jBl-eJ-x0c" secondAttribute="bottom" id="glE-Vi-HnF"/>
                             <constraint firstItem="FE3-iB-7oj" firstAttribute="leading" secondItem="8Jc-tc-VqM" secondAttribute="leading" id="smZ-Gs-SEq"/>
                             <constraint firstItem="FE3-iB-7oj" firstAttribute="trailing" secondItem="8Jc-tc-VqM" secondAttribute="trailing" id="tne-Qo-I7J"/>
-                            <constraint firstItem="PIW-fu-y3O" firstAttribute="trailing" secondItem="lgt-gw-JkG" secondAttribute="trailing" id="vw1-vE-gql"/>
                             <constraint firstAttribute="trailing" secondItem="M5U-ux-2sY" secondAttribute="trailing" id="zeY-l5-i23"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PIW-fu-y3O"/>
@@ -591,10 +602,10 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="UpperView" destination="FE3-iB-7oj" id="Osy-b5-9yN"/>
+                        <outlet property="collectionView" destination="4wf-7a-8MZ" id="DgW-WG-lq9"/>
                         <outlet property="map" destination="M5U-ux-2sY" id="bbM-Zu-G6g"/>
                         <outlet property="searchDisplayController" destination="2sO-ce-BTX" id="Uo4-0a-I9R"/>
                         <outlet property="searchbar" destination="Byf-4K-mhq" id="Cml-jk-g02"/>
-                        <outlet property="tableview" destination="lgt-gw-JkG" id="hIK-KH-tdg"/>
                         <segue destination="qWO-ho-PqZ" kind="show" identifier="details" id="qdI-aZ-bDb"/>
                     </connections>
                 </viewController>
@@ -613,14 +624,14 @@
         <!--Third View Controller-->
         <scene sceneID="uCr-oC-vS6">
             <objects>
-                <viewController id="Sml-G1-XFN" customClass="Third_ViewController" customModule="Seebo_Project_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="center" id="Sml-G1-XFN" customClass="Third_ViewController" customModule="Seebo_Project_" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KDz-OX-TkI">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="CBl-rt-aRr"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" systemItem="bookmarks" id="7Jx-oc-RAp"/>
+                    <tabBarItem key="tabBarItem" title="" id="7Jx-oc-RAp"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Gs-HH-jJ3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -687,12 +698,12 @@
             </objects>
             <point key="canvasLocation" x="1210.144927536232" y="117.39130434782609"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Tab Bar View-->
         <scene sceneID="jn8-IQ-VtD">
             <objects>
-                <tabBarController storyboardIdentifier="TabBarController" automaticallyAdjustsScrollViewInsets="NO" id="gJ1-LJ-eIK" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBarController" automaticallyAdjustsScrollViewInsets="NO" id="gJ1-LJ-eIK" customClass="TabBarView" customModule="Seebo_Project_" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="rtZ-Kb-Vrg">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" itemPositioning="centered" id="rtZ-Kb-Vrg">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -710,11 +721,11 @@
             </objects>
             <point key="canvasLocation" x="1931.8840579710147" y="118.20652173913044"/>
         </scene>
-        <!--Item-->
+        <!--Discover-->
         <scene sceneID="wSL-dY-enl">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eVI-px-Akt" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" image="discover" id="Gbe-In-mfa"/>
+                    <tabBarItem key="tabBarItem" title="Discover" image="discover" id="Gbe-In-mfa"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="FWe-vQ-Dlh">
                         <rect key="frame" x="0.0" y="20" width="414" height="44"/>
@@ -727,7 +738,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZGf-Ir-Ugh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2714.4927536231885" y="476.9021739130435"/>
+            <point key="canvasLocation" x="2716" y="536"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Djl-G3-3rA">

@@ -8,7 +8,6 @@
 
 import UIKit
 import Foundation
-import ImageSlideshow
 import SDWebImage
 import Cosmos
 
@@ -33,7 +32,6 @@ class DetailsViewController: UIViewController ,UIScrollViewDelegate,DetailsViewP
     @IBOutlet weak var askSellerHight: NSLayoutConstraint!
     var advertisment : advertisment!
     var presenter:DetailsPresenterPro!
-    var inputs = [InputSource]()
     var i = Int()
     var images = [String]()
     override func viewDidLoad() {

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		84013ABF217E137A00039BF5 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84013ABE217E137A00039BF5 /* FBSDKCoreKit.framework */; };
+		84013AC1217E137A00039BF5 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84013AC0217E137A00039BF5 /* FBSDKLoginKit.framework */; };
+		84013AC3217E137A00039BF5 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84013AC2217E137A00039BF5 /* FBSDKShareKit.framework */; };
+		84013AC5217E138500039BF5 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84013AC4217E138500039BF5 /* Bolts.framework */; };
 		840ADFF6214E8B20004491B6 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 840ADFF5214E8B20004491B6 /* Alamofire.framework */; };
 		840ADFF8214E8B20004491B6 /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 840ADFF7214E8B20004491B6 /* SDWebImage.framework */; };
 		840ADFFA214E8B20004491B6 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 840ADFF9214E8B20004491B6 /* SwiftyJSON.framework */; };
@@ -64,18 +68,40 @@
 		8449B88C214953F900D66A8C /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8449B88B214953F900D66A8C /* CollectionViewCell.swift */; };
 		8450A385215679F8001CE4E5 /* HeaderDetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8450A384215679F8001CE4E5 /* HeaderDetailsCell.swift */; };
 		8450A38721567A3D001CE4E5 /* HeaderDetailsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8450A38621567A3D001CE4E5 /* HeaderDetailsCell.xib */; };
+		845745022175ECDA00B49383 /* LoginScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845745012175ECD900B49383 /* LoginScreenViewController.swift */; };
+		845745052175EE5E00B49383 /* Main2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 845745042175EE5E00B49383 /* Main2.storyboard */; };
+		845745072176099500B49383 /* TextFieldUnderLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845745062176099400B49383 /* TextFieldUnderLine.swift */; };
+		8457450E21763D5E00B49383 /* LoginViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8457450D21763D5E00B49383 /* LoginViewProtocol.swift */; };
+		8457451021763D9300B49383 /* LoginPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8457450F21763D9300B49383 /* LoginPresenterProtocol.swift */; };
+		8457451221763DCA00B49383 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8457451121763DCA00B49383 /* LoginPresenter.swift */; };
+		8457451421763E5700B49383 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8457451321763E5700B49383 /* LoginModel.swift */; };
+		8457451621763FE600B49383 /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8457451521763FE600B49383 /* LoginManager.swift */; };
 		84594C41215B77A0006BAEB1 /* DisplayTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84594C40215B77A0006BAEB1 /* DisplayTime.swift */; };
 		84594C43215BC12F006BAEB1 /* RateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84594C42215BC12F006BAEB1 /* RateView.xib */; };
 		84594C45215BC166006BAEB1 /* RateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84594C44215BC166006BAEB1 /* RateView.swift */; };
-		846013502155AB0700B1033E /* ImageSlideshow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8460134F2155AB0700B1033E /* ImageSlideshow.framework */; };
+		846347B6217F515A0083EB72 /* FBRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846347B5217F51590083EB72 /* FBRegisterViewController.swift */; };
+		846347B8217F65900083EB72 /* FBPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846347B7217F65900083EB72 /* FBPresenter.swift */; };
+		846347BA217F65CD0083EB72 /* FBRegisterViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846347B9217F65CD0083EB72 /* FBRegisterViewProtocol.swift */; };
+		846347BC217F660B0083EB72 /* FBRegisterPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846347BB217F660B0083EB72 /* FBRegisterPresenterProtocol.swift */; };
+		846347BE217F66700083EB72 /* FBRegisterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846347BD217F66700083EB72 /* FBRegisterManager.swift */; };
 		8465D73F216642980037B01A /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8465D73E216642980037B01A /* Alert.swift */; };
+		8469AB7A217C82D300B75686 /* RegisterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8469AB79217C82D300B75686 /* RegisterManager.swift */; };
+		8469AB7C217C908E00B75686 /* RegisterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8469AB7B217C908E00B75686 /* RegisterPresenter.swift */; };
+		8469AB7E217C90E500B75686 /* RegisterViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8469AB7D217C90E500B75686 /* RegisterViewProtocol.swift */; };
+		8469AB80217C910900B75686 /* RegisterPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8469AB7F217C910900B75686 /* RegisterPresenterProtocol.swift */; };
+		8469AB82217C9A5400B75686 /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8469AB81217C9A5400B75686 /* Toast.swift */; };
+		8469AB84217CAC2700B75686 /* TermsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8469AB83217CAC2700B75686 /* TermsViewController.swift */; };
+		846FF09E21773B6900C4C066 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846FF09D21773B6900C4C066 /* Helper.swift */; };
+		847C5C81217DD63B00DA6ADC /* Thanks ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847C5C80217DD63B00DA6ADC /* Thanks ViewController.swift */; };
 		84836951216F3C07008BA444 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84836950216F3C07008BA444 /* Network.swift */; };
 		84836954216F70E6008BA444 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84836953216F70E6008BA444 /* Constants.swift */; };
+		8489CA072178AAE600CEEE74 /* RegisterScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8489CA062178AAE600CEEE74 /* RegisterScreenViewController.swift */; };
 		849EB256215275CC009D949D /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849EB255215275CC009D949D /* DetailsViewController.swift */; };
 		849F1CEC2161883A009AC814 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849F1CEB2161883A009AC814 /* SplashViewController.swift */; };
 		84AB54C0215FE9B300E3B028 /* Cosmos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84AB54BF215FE9B300E3B028 /* Cosmos.framework */; };
 		84C122ED215926200023ABC6 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C122EC215926200023ABC6 /* SearchBar.swift */; };
 		84CA103F2153E8A300E06530 /* UserContact.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84CA103E2153E8A300E06530 /* UserContact.xib */; };
+		84CAE5612174AF04000DE6D7 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CAE5602174AF04000DE6D7 /* TabBarView.swift */; };
 		84E5DED52157E33100783F55 /* CollectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E5DED42157E33000783F55 /* CollectionHeaderView.swift */; };
 		B4CF833AB0985EA7446C761A /* Pods_Seebo_Project_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECC1D2603C80A0053CB7AEF9 /* Pods_Seebo_Project_.framework */; };
 /* End PBXBuildFile section */
@@ -101,6 +127,10 @@
 		0146B418C3A81BF93AFE0A7D /* Pods-Seebo Project .release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Seebo Project .release.xcconfig"; path = "Pods/Target Support Files/Pods-Seebo Project /Pods-Seebo Project .release.xcconfig"; sourceTree = "<group>"; };
 		21EF60D2255E5FC935FBB6F0 /* Pods_HomeScreen_TaskPerfect.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HomeScreen_TaskPerfect.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F0498CFC1A12F4FEAD683A7 /* Pods-Seebo Project .debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Seebo Project .debug.xcconfig"; path = "Pods/Target Support Files/Pods-Seebo Project /Pods-Seebo Project .debug.xcconfig"; sourceTree = "<group>"; };
+		84013ABE217E137A00039BF5 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		84013AC0217E137A00039BF5 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		84013AC2217E137A00039BF5 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		84013AC4217E138500039BF5 /* Bolts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Bolts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		840ADFF5214E8B20004491B6 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		840ADFF7214E8B20004491B6 /* SDWebImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SDWebImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		840ADFF9214E8B20004491B6 /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -165,21 +195,42 @@
 		8449B88B214953F900D66A8C /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		8450A384215679F8001CE4E5 /* HeaderDetailsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderDetailsCell.swift; sourceTree = "<group>"; };
 		8450A38621567A3D001CE4E5 /* HeaderDetailsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderDetailsCell.xib; sourceTree = "<group>"; };
+		845745012175ECD900B49383 /* LoginScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreenViewController.swift; sourceTree = "<group>"; };
+		845745042175EE5E00B49383 /* Main2.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main2.storyboard; sourceTree = "<group>"; };
+		845745062176099400B49383 /* TextFieldUnderLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldUnderLine.swift; sourceTree = "<group>"; };
+		8457450D21763D5E00B49383 /* LoginViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewProtocol.swift; sourceTree = "<group>"; };
+		8457450F21763D9300B49383 /* LoginPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenterProtocol.swift; sourceTree = "<group>"; };
+		8457451121763DCA00B49383 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
+		8457451321763E5700B49383 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
+		8457451521763FE600B49383 /* LoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
 		84594C40215B77A0006BAEB1 /* DisplayTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayTime.swift; sourceTree = "<group>"; };
 		84594C42215BC12F006BAEB1 /* RateView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RateView.xib; sourceTree = "<group>"; };
 		84594C44215BC166006BAEB1 /* RateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateView.swift; sourceTree = "<group>"; };
 		8460134D2155A4D700B1033E /* ImageSlideshow.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ImageSlideshow.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8460134F2155AB0700B1033E /* ImageSlideshow.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ImageSlideshow.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		846347B5217F51590083EB72 /* FBRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBRegisterViewController.swift; sourceTree = "<group>"; };
+		846347B7217F65900083EB72 /* FBPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBPresenter.swift; sourceTree = "<group>"; };
+		846347B9217F65CD0083EB72 /* FBRegisterViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBRegisterViewProtocol.swift; sourceTree = "<group>"; };
+		846347BB217F660B0083EB72 /* FBRegisterPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBRegisterPresenterProtocol.swift; sourceTree = "<group>"; };
+		846347BD217F66700083EB72 /* FBRegisterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBRegisterManager.swift; sourceTree = "<group>"; };
 		8465D73E216642980037B01A /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
-		846A2B232163B56200714EF6 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Main.strings; sourceTree = "<group>"; };
-		846A2B242163B56300714EF6 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		8469AB79217C82D300B75686 /* RegisterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterManager.swift; sourceTree = "<group>"; };
+		8469AB7B217C908E00B75686 /* RegisterPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPresenter.swift; sourceTree = "<group>"; };
+		8469AB7D217C90E500B75686 /* RegisterViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewProtocol.swift; sourceTree = "<group>"; };
+		8469AB7F217C910900B75686 /* RegisterPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPresenterProtocol.swift; sourceTree = "<group>"; };
+		8469AB81217C9A5400B75686 /* Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
+		8469AB83217CAC2700B75686 /* TermsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsViewController.swift; sourceTree = "<group>"; };
+		846FF09D21773B6900C4C066 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		847C5C80217DD63B00DA6ADC /* Thanks ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Thanks ViewController.swift"; sourceTree = "<group>"; };
 		84836950216F3C07008BA444 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		84836953216F70E6008BA444 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		8489CA062178AAE600CEEE74 /* RegisterScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterScreenViewController.swift; sourceTree = "<group>"; };
 		849EB255215275CC009D949D /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		849F1CEB2161883A009AC814 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		84AB54BF215FE9B300E3B028 /* Cosmos.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Cosmos.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		84C122EC215926200023ABC6 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		84CA103E2153E8A300E06530 /* UserContact.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserContact.xib; sourceTree = "<group>"; };
+		84CAE5602174AF04000DE6D7 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TabBarView.swift; path = "/Users/admin/Documents/SeeboProject/Seebo-Project/Seebo Project/Home Screen/View/TabBarView.swift"; sourceTree = "<absolute>"; };
 		84E5DED42157E33000783F55 /* CollectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionHeaderView.swift; sourceTree = "<group>"; };
 		ECC1D2603C80A0053CB7AEF9 /* Pods_Seebo_Project_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Seebo_Project_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -189,8 +240,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84013AC5217E138500039BF5 /* Bolts.framework in Frameworks */,
+				84013ABF217E137A00039BF5 /* FBSDKCoreKit.framework in Frameworks */,
+				84013AC1217E137A00039BF5 /* FBSDKLoginKit.framework in Frameworks */,
+				84013AC3217E137A00039BF5 /* FBSDKShareKit.framework in Frameworks */,
 				84AB54C0215FE9B300E3B028 /* Cosmos.framework in Frameworks */,
-				846013502155AB0700B1033E /* ImageSlideshow.framework in Frameworks */,
 				842F9F07214FA206008E0C76 /* CoreLocation.framework in Frameworks */,
 				840ADFF6214E8B20004491B6 /* Alamofire.framework in Frameworks */,
 				840ADFF8214E8B20004491B6 /* SDWebImage.framework in Frameworks */,
@@ -299,14 +353,19 @@
 		84324AB62148735E00B172BE /* Seebo Project */ = {
 			isa = PBXGroup;
 			children = (
-				849F1CE9216185EE009AC814 /* Splash Screen */,
+				847C093521808B1300B0BE19 /* ThanksViewController */,
+				847C093421808AAE00B0BE19 /* TermsViewController */,
 				84C122EB215923660023ABC6 /* CommonClasses */,
+				846347AF217F50C70083EB72 /* RegisterFacebook */,
+				8489CA032178AA4800CEEE74 /* Register Screen */,
+				845745002175DF5F00B49383 /* Login Screen */,
+				849F1CE9216185EE009AC814 /* Splash Screen */,
 				849EB24F21526C42009D949D /* Details Screen */,
 				8428E3EF214E4B8100051E39 /* Map Screen */,
 				84334F07214D7CE40062161C /* Home Screen */,
+				845745032175EDB800B49383 /* Storyboards */,
 				84324AB72148735F00B172BE /* AppDelegate.swift */,
 				84324AC12148737F00B172BE /* Assets.xcassets */,
-				84324ABB2148735F00B172BE /* Main.storyboard */,
 				84324AC32148737F00B172BE /* LaunchScreen.storyboard */,
 				84324AC62148737F00B172BE /* Info.plist */,
 				84324ABE2148735F00B172BE /* HomeScreen_TaskPerfect.xcdatamodeld */,
@@ -437,9 +496,13 @@
 			isa = PBXGroup;
 			children = (
 				84C122EC215926200023ABC6 /* SearchBar.swift */,
+				84CAE5602174AF04000DE6D7 /* TabBarView.swift */,
 				84594C40215B77A0006BAEB1 /* DisplayTime.swift */,
 				843E8AC92162329100834FC5 /* Connection.swift */,
 				8465D73E216642980037B01A /* Alert.swift */,
+				845745062176099400B49383 /* TextFieldUnderLine.swift */,
+				846FF09D21773B6900C4C066 /* Helper.swift */,
+				8469AB81217C9A5400B75686 /* Toast.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -451,6 +514,161 @@
 				842B761C215A36FE00404155 /* NavigationBarView.swift */,
 			);
 			path = XibViews;
+			sourceTree = "<group>";
+		};
+		845745002175DF5F00B49383 /* Login Screen */ = {
+			isa = PBXGroup;
+			children = (
+				8457450821763B9900B49383 /* Protocols */,
+				8457450921763BA500B49383 /* View */,
+				8457450A21763BB000B49383 /* Presenter */,
+				8457450B21763BBF00B49383 /* Model */,
+				8457450C21763BC800B49383 /* DataAcessLayer */,
+			);
+			path = "Login Screen";
+			sourceTree = "<group>";
+		};
+		845745032175EDB800B49383 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				84324ABB2148735F00B172BE /* Main.storyboard */,
+				845745042175EE5E00B49383 /* Main2.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		8457450821763B9900B49383 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				8457450F21763D9300B49383 /* LoginPresenterProtocol.swift */,
+				8457450D21763D5E00B49383 /* LoginViewProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		8457450921763BA500B49383 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				845745012175ECD900B49383 /* LoginScreenViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8457450A21763BB000B49383 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				8457451121763DCA00B49383 /* LoginPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		8457450B21763BBF00B49383 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8457451321763E5700B49383 /* LoginModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8457450C21763BC800B49383 /* DataAcessLayer */ = {
+			isa = PBXGroup;
+			children = (
+				8457451521763FE600B49383 /* LoginManager.swift */,
+			);
+			path = DataAcessLayer;
+			sourceTree = "<group>";
+		};
+		846347AF217F50C70083EB72 /* RegisterFacebook */ = {
+			isa = PBXGroup;
+			children = (
+				846347B3217F510D0083EB72 /* Protocols */,
+				846347B0217F50EB0083EB72 /* View */,
+				846347B1217F50F50083EB72 /* Presenter */,
+				846347B4217F51160083EB72 /* DataAcessLayer */,
+			);
+			path = RegisterFacebook;
+			sourceTree = "<group>";
+		};
+		846347B0217F50EB0083EB72 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				846347B5217F51590083EB72 /* FBRegisterViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		846347B1217F50F50083EB72 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				846347B7217F65900083EB72 /* FBPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		846347B3217F510D0083EB72 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				846347B9217F65CD0083EB72 /* FBRegisterViewProtocol.swift */,
+				846347BB217F660B0083EB72 /* FBRegisterPresenterProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		846347B4217F51160083EB72 /* DataAcessLayer */ = {
+			isa = PBXGroup;
+			children = (
+				846347BD217F66700083EB72 /* FBRegisterManager.swift */,
+			);
+			path = DataAcessLayer;
+			sourceTree = "<group>";
+		};
+		8469AB74217C822E00B75686 /* DataAcessLayer */ = {
+			isa = PBXGroup;
+			children = (
+				8469AB79217C82D300B75686 /* RegisterManager.swift */,
+			);
+			path = DataAcessLayer;
+			sourceTree = "<group>";
+		};
+		8469AB76217C824D00B75686 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				8469AB7B217C908E00B75686 /* RegisterPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		8469AB77217C825A00B75686 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8489CA062178AAE600CEEE74 /* RegisterScreenViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8469AB78217C826300B75686 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				8469AB7D217C90E500B75686 /* RegisterViewProtocol.swift */,
+				8469AB7F217C910900B75686 /* RegisterPresenterProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		847C093421808AAE00B0BE19 /* TermsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				8469AB83217CAC2700B75686 /* TermsViewController.swift */,
+			);
+			path = TermsViewController;
+			sourceTree = "<group>";
+		};
+		847C093521808B1300B0BE19 /* ThanksViewController */ = {
+			isa = PBXGroup;
+			children = (
+				847C5C80217DD63B00DA6ADC /* Thanks ViewController.swift */,
+			);
+			path = ThanksViewController;
 			sourceTree = "<group>";
 		};
 		8483694F216F3B58008BA444 /* Network */ = {
@@ -468,6 +686,17 @@
 				84836953216F70E6008BA444 /* Constants.swift */,
 			);
 			path = Constants;
+			sourceTree = "<group>";
+		};
+		8489CA032178AA4800CEEE74 /* Register Screen */ = {
+			isa = PBXGroup;
+			children = (
+				8469AB78217C826300B75686 /* Protocols */,
+				8469AB77217C825A00B75686 /* View */,
+				8469AB76217C824D00B75686 /* Presenter */,
+				8469AB74217C822E00B75686 /* DataAcessLayer */,
+			);
+			path = "Register Screen";
 			sourceTree = "<group>";
 		};
 		849EB24F21526C42009D949D /* Details Screen */ = {
@@ -572,6 +801,10 @@
 		F2BC4B0B812A0638C73BF533 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				84013AC4217E138500039BF5 /* Bolts.framework */,
+				84013ABE217E137A00039BF5 /* FBSDKCoreKit.framework */,
+				84013AC0217E137A00039BF5 /* FBSDKLoginKit.framework */,
+				84013AC2217E137A00039BF5 /* FBSDKShareKit.framework */,
 				84AB54BF215FE9B300E3B028 /* Cosmos.framework */,
 				843601A4215FF43700074FF0 /* Cosmos.framework */,
 				8460134F2155AB0700B1033E /* ImageSlideshow.framework */,
@@ -704,6 +937,7 @@
 				84324AC22148737F00B172BE /* Assets.xcassets in Resources */,
 				84594C43215BC12F006BAEB1 /* RateView.xib in Resources */,
 				8450A38721567A3D001CE4E5 /* HeaderDetailsCell.xib in Resources */,
+				845745052175EE5E00B49383 /* Main2.storyboard in Resources */,
 				84324ABD2148735F00B172BE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -753,16 +987,22 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Seebo Project /Pods-Seebo Project -frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
 				"${BUILT_PRODUCTS_DIR}/Cosmos/Cosmos.framework",
-				"${BUILT_PRODUCTS_DIR}/ImageSlideshow/ImageSlideshow.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKShareKit/FBSDKShareKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cosmos.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImageSlideshow.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKShareKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
@@ -796,12 +1036,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				845745072176099500B49383 /* TextFieldUnderLine.swift in Sources */,
 				8449B86E2149067200D66A8C /* Third ViewController.swift in Sources */,
+				846347BE217F66700083EB72 /* FBRegisterManager.swift in Sources */,
 				843E8AC8216223C700834FC5 /* SplashPresenterProtocol.swift in Sources */,
 				843B6A052152FC7100ECD369 /* DetailsTableCell.swift in Sources */,
+				8469AB7A217C82D300B75686 /* RegisterManager.swift in Sources */,
+				8469AB7E217C90E500B75686 /* RegisterViewProtocol.swift in Sources */,
 				8465D73F216642980037B01A /* Alert.swift in Sources */,
 				841ED96E21555E2A00BC59EC /* DetailsViewPro.swift in Sources */,
 				8428E3F6214E4D4700051E39 /* MapManager.swift in Sources */,
+				8469AB80217C910900B75686 /* RegisterPresenterProtocol.swift in Sources */,
 				8428E3FE214E4DFE00051E39 /* MapViewProtocol.swift in Sources */,
 				84324AC02148735F00B172BE /* HomeScreen_TaskPerfect.xcdatamodeld in Sources */,
 				8431114C21514D2E005BF612 /* DiscoverCell.swift in Sources */,
@@ -810,16 +1055,22 @@
 				841ED96C21555C4E00BC59EC /* DetailsPresenter.swift in Sources */,
 				843B6A0D2153264D00ECD369 /* User.swift in Sources */,
 				8449B880214925F500D66A8C /* HomeViewProtocol.swift in Sources */,
+				8457451021763D9300B49383 /* LoginPresenterProtocol.swift in Sources */,
+				8457451221763DCA00B49383 /* LoginPresenter.swift in Sources */,
 				84594C41215B77A0006BAEB1 /* DisplayTime.swift in Sources */,
 				8449B8842149266D00D66A8C /* HomePresenter.swift in Sources */,
+				8469AB84217CAC2700B75686 /* TermsViewController.swift in Sources */,
+				8457451421763E5700B49383 /* LoginModel.swift in Sources */,
 				843E8ABE2162214C00834FC5 /* SplashManager.swift in Sources */,
 				8449B872214906C900D66A8C /* Fifth ViewController.swift in Sources */,
 				843E8AC62162238100834FC5 /* SplashViewProtocol.swift in Sources */,
 				8428E400214E4E2300051E39 /* MapPresenterProtocol.swift in Sources */,
 				849F1CEC2161883A009AC814 /* SplashViewController.swift in Sources */,
+				847C5C81217DD63B00DA6ADC /* Thanks ViewController.swift in Sources */,
 				843E8AC22162232A00834FC5 /* SplashModel.swift in Sources */,
 				843B6A0921531C9100ECD369 /* ReviewCell.swift in Sources */,
 				84836951216F3C07008BA444 /* Network.swift in Sources */,
+				846347B8217F65900083EB72 /* FBPresenter.swift in Sources */,
 				8449B86C214901F800D66A8C /* Second ViewController.swift in Sources */,
 				84836954216F70E6008BA444 /* Constants.swift in Sources */,
 				841ED968215551BD00BC59EC /* DetailsManager.swift in Sources */,
@@ -830,21 +1081,32 @@
 				84324ABA2148735F00B172BE /* HomeScreenViewController.swift in Sources */,
 				8428E3FA214E4DAE00051E39 /* MapModel.swift in Sources */,
 				84C122ED215926200023ABC6 /* SearchBar.swift in Sources */,
+				84CAE5612174AF04000DE6D7 /* TabBarView.swift in Sources */,
 				8449B88C214953F900D66A8C /* CollectionViewCell.swift in Sources */,
+				8489CA072178AAE600CEEE74 /* RegisterScreenViewController.swift in Sources */,
 				844817E02153EB4600C716EC /* UserContact.swift in Sources */,
 				849EB256215275CC009D949D /* DetailsViewController.swift in Sources */,
+				846347BC217F660B0083EB72 /* FBRegisterPresenterProtocol.swift in Sources */,
 				843E8ACA2162329100834FC5 /* Connection.swift in Sources */,
+				8457450E21763D5E00B49383 /* LoginViewProtocol.swift in Sources */,
 				840ADFFE214F093F004491B6 /* Attribute.swift in Sources */,
 				843B6A0B2153263800ECD369 /* Review.swift in Sources */,
+				846FF09E21773B6900C4C066 /* Helper.swift in Sources */,
 				843B6A012152BA9100ECD369 /* CardViewDetails.swift in Sources */,
+				8469AB82217C9A5400B75686 /* Toast.swift in Sources */,
 				843E8AC42162235300834FC5 /* SplashPresenter.swift in Sources */,
 				841ED97021555E6000BC59EC /* DetailsPresenterPro.swift in Sources */,
 				842B761D215A36FE00404155 /* NavigationBarView.swift in Sources */,
 				84E5DED52157E33100783F55 /* CollectionHeaderView.swift in Sources */,
+				8457451621763FE600B49383 /* LoginManager.swift in Sources */,
+				846347BA217F65CD0083EB72 /* FBRegisterViewProtocol.swift in Sources */,
+				8469AB7C217C908E00B75686 /* RegisterPresenter.swift in Sources */,
 				8449B886214926A600D66A8C /* HomeModel.swift in Sources */,
 				843E8AC0216221A700834FC5 /* ApiDataAcessLayer.swift in Sources */,
 				84324AB82148735F00B172BE /* AppDelegate.swift in Sources */,
 				8449B870214906AA00D66A8C /* Fourth ViewController.swift in Sources */,
+				846347B6217F515A0083EB72 /* FBRegisterViewController.swift in Sources */,
+				845745022175ECDA00B49383 /* LoginScreenViewController.swift in Sources */,
 				842F9F0B214FAE00008E0C76 /* TableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -885,7 +1147,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				84324ABC2148735F00B172BE /* Base */,
-				846A2B232163B56200714EF6 /* ar */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -894,7 +1155,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				84324AC42148737F00B172BE /* Base */,
-				846A2B242163B56300714EF6 /* ar */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";

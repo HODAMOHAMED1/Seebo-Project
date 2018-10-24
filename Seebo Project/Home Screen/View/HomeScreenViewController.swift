@@ -35,6 +35,10 @@ class HomeScreenViewController: UIViewController,HomeViewPro {
 //        let location = NSKeyedUnarchiver.unarchiveObject(with: locationData) as! CLLocation
 //        print("jahsfkjashsfsf\(location.coordinate.longitude)")
     }
+    override func viewWillLayoutSubviews() {
+        view.layoutIfNeeded()
+        collectionview.collectionViewLayout.invalidateLayout()
+    }
     
     func reloadfunc() {
         
@@ -83,11 +87,23 @@ extension HomeScreenViewController:UICollectionViewDataSource ,UICollectionViewD
             items = presenter.getItems()
         }
         cell.configure(item: items[indexPath.row])
+        cell.layer.cornerRadius = 15
+        cell.imagee.layer.cornerRadius = 15
+        cell.imagee.layer.masksToBounds = true
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        return CGSize(width: collectionview.frame.size.width*(0.28), height: collectionview.frame.size.height)
+        return CGSize(width: CGFloat((collectionView.frame.size.width/2)-20), height: CGFloat(collectionView.frame.size.height*(1.1)))
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 1
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 1
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsetsMake(5, 10, 5, 10);
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
          let cell = collectionView.cellForItem(at: indexPath) as! CollectionViewCell
@@ -145,6 +161,7 @@ extension HomeScreenViewController :UISearchBarDelegate {
         
         collectionview.delegate = self
         collectionview.dataSource = self
+        collectionview.layer.cornerRadius = 15
         collectionview.register(UINib(nibName: "CollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CollectionCell")
         collectionview.allowsMultipleSelection = true
     }
